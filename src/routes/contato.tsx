@@ -22,21 +22,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import mapImg from "@/assets/map.jpg";
+import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, MAPS_EMBED_URL } from "@/lib/contact";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — Éclat Odontologia" },
+      { title: "Contato — Centro Odontológico Integral" },
       {
         name: "description",
         content:
-          "Fale com a Éclat Odontologia. Endereço, horários e formulário de contato direto com a equipe.",
+          "Fale com o Centro Odontológico Integral em Uberaba, MG. Endereço, horários e formulário de contato direto.",
       },
-      { property: "og:title", content: "Contato — Éclat Odontologia" },
+      { property: "og:title", content: "Contato — Centro Odontológico Integral" },
       {
         property: "og:description",
-        content: "Endereço, horários e formulário direto com a equipe da Éclat.",
+        content: "Endereço, horários e formulário de contato em Uberaba, MG.",
       },
     ],
   }),
@@ -73,7 +73,7 @@ function Contato() {
 
       <section className="pt-40 pb-16 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-8 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Contato
           </span>
           <h1 className="font-serif italic text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
@@ -86,49 +86,52 @@ function Contato() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
           {/* Info column */}
           <div className="md:col-span-5 space-y-12">
-            <img
-              src={mapImg}
-              alt="Mapa estilizado da localização da clínica"
+            <iframe
+              title="Localização do Centro Odontológico Integral no Google Maps"
+              src={MAPS_EMBED_URL}
               width={1200}
               height={800}
               loading="lazy"
-              className="w-full aspect-[3/2] object-cover border border-brand-teal/30"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full aspect-[3/2] border border-brand-teal/30"
             />
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4">
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Endereço
               </h3>
               <p className="text-sm leading-relaxed text-brand-navy/75">
-                Avenida das Artes, 1020 · 4º andar
+                R. Cel. Antônio Rios, 1097 · Sala 1107-B
                 <br />
-                Jardins — São Paulo, SP
+                Santa Marta — Uberaba, MG
                 <br />
-                CEP 01409-000
+                CEP 38061-150
               </p>
             </div>
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4">
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Horários
               </h3>
               <p className="text-sm leading-relaxed text-brand-navy/75">
-                Segunda a sexta · 09h às 19h
+                Segunda a sexta · 08h às 18h
                 <br />
                 Sábado · sob agendamento
               </p>
             </div>
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4">
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Canais
               </h3>
               <p className="text-sm leading-relaxed text-brand-navy/75">
-                +55 11 3000-0000
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-deep">
+                  {PHONE_DISPLAY} · WhatsApp
+                </a>
                 <br />
-                +55 11 90000-0000 · WhatsApp
-                <br />
-                ola@eclat.odo.br
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-deep">
+                  @drareginazagoo no Instagram
+                </a>
               </p>
             </div>
           </div>
@@ -192,7 +195,7 @@ function Contato() {
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="(11) 90000-0000"
+                            placeholder="(34) 90000-0000"
                             className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>

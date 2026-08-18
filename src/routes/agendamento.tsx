@@ -13,16 +13,16 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/agendamento")({
   head: () => ({
     meta: [
-      { title: "Agendamento — Éclat Odontologia" },
+      { title: "Agendamento — Centro Odontológico Integral" },
       {
         name: "description",
         content:
-          "Reserve sua primeira avaliação na Éclat Odontologia. Escolha o tratamento, a data e o horário em poucos passos.",
+          "Reserve sua consulta com a Dra. Regina Zago. Escolha o tratamento, a data e o horário em poucos passos.",
       },
-      { property: "og:title", content: "Agendamento — Éclat Odontologia" },
+      { property: "og:title", content: "Agendamento — Centro Odontológico Integral" },
       {
         property: "og:description",
-        content: "Reserve sua avaliação em poucos passos.",
+        content: "Reserve sua consulta em poucos passos.",
       },
     ],
   }),
@@ -31,13 +31,14 @@ export const Route = createFileRoute("/agendamento")({
 
 const treatments = [
   "Primeira avaliação",
-  "Lentes de Porcelana",
-  "Implantes Digitais",
-  "Ortodontia Invisível",
-  "Clareamento a Laser",
-  "Harmonização Orofacial",
-  "Endodontia Microscópica",
-  "Periodontia Estética",
+  "Periodontia",
+  "Implantes",
+  "Prótese Dentária",
+  "Odontologia Estética",
+  "Ortodontia",
+  "Endodontia",
+  "Clínica Geral",
+  "Odontopediatria",
 ];
 
 const times = ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00", "18:30"];
@@ -88,7 +89,7 @@ function Agendamento() {
 
       <section className="pt-40 pb-16 px-6 md:px-10">
         <div className="max-w-5xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-8 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Agendamento
           </span>
           <h1 className="font-serif italic text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
@@ -114,7 +115,7 @@ function Agendamento() {
                     done && "opacity-60",
                   )}
                 >
-                  <span className="font-serif italic text-2xl text-brand-teal">{s.n}</span>
+                  <span className="font-serif italic text-2xl text-brand-teal-deep">{s.n}</span>
                   <span className={cn(
                     "text-[10px] uppercase tracking-[0.2em]",
                     active ? "text-brand-navy" : "text-brand-navy/50",
@@ -138,7 +139,7 @@ function Agendamento() {
                     onClick={() => setTreatment(t)}
                     className={cn(
                       "bg-brand-cream p-6 text-left text-sm transition-colors",
-                      treatment === t ? "bg-brand-navy text-brand-cream" : "hover:bg-white",
+                      treatment === t ? "bg-brand-navy text-brand-cream" : "hover:bg-brand-mist",
                     )}
                   >
                     <span className="block text-[10px] uppercase tracking-[0.2em] mb-2 opacity-50">
@@ -171,7 +172,7 @@ function Agendamento() {
                   <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 mb-6">
                     Horários disponíveis
                     {date && (
-                      <span className="block mt-2 text-brand-teal normal-case tracking-normal text-xs font-serif italic">
+                      <span className="block mt-2 text-brand-teal-deep normal-case tracking-normal text-xs font-serif italic">
                         {format(date, "EEEE, d 'de' MMMM", { locale: ptBR })}
                       </span>
                     )}
@@ -185,7 +186,7 @@ function Agendamento() {
                         onClick={() => setTime(t)}
                         className={cn(
                           "bg-brand-cream py-4 text-sm font-serif italic transition-colors",
-                          time === t ? "bg-brand-navy text-brand-cream" : "hover:bg-white",
+                          time === t ? "bg-brand-navy text-brand-cream" : "hover:bg-brand-mist",
                           !date && "opacity-40 cursor-not-allowed",
                         )}
                       >
@@ -209,7 +210,7 @@ function Agendamento() {
                   <Input value={nome} onChange={(e) => setNome(e.target.value)} className={fieldClass} />
                 </Field>
                 <Field label="Telefone">
-                  <Input value={telefone} onChange={(e) => setTelefone(e.target.value)} className={fieldClass} placeholder="(11) 90000-0000" />
+                  <Input value={telefone} onChange={(e) => setTelefone(e.target.value)} className={fieldClass} placeholder="(34) 90000-0000" />
                 </Field>
                 <Field label="E-mail">
                   <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={fieldClass} />
@@ -221,7 +222,7 @@ function Agendamento() {
 
               {/* Summary */}
               <div className="border border-brand-navy/10 bg-white/60 p-8">
-                <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6">
+                <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-6">
                   Resumo da solicitação
                 </h3>
                 <dl className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
@@ -254,7 +255,7 @@ function Agendamento() {
           {/* Step 4 — confirmation */}
           {step === 4 && (
             <div className="py-20 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal block mb-8">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep block mb-8">
                 Solicitação enviada
               </span>
               <h2 className="font-serif italic text-4xl md:text-5xl mb-8 leading-tight">
