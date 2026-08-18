@@ -21,8 +21,8 @@ export function SiteHeader() {
           <Link
             key={l.to}
             to={l.to}
-            className="hover:text-brand-gold transition-colors"
-            activeProps={{ className: "text-brand-gold" }}
+            className="hover:text-brand-teal transition-colors"
+            activeProps={{ className: "text-brand-teal" }}
           >
             {l.label}
           </Link>

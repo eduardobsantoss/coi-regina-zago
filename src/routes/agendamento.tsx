@@ -83,12 +83,12 @@ function Agendamento() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-bone text-brand-ink font-sans">
+    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
       <SiteHeader />
 
       <section className="pt-40 pb-16 px-6 md:px-10">
         <div className="max-w-5xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-8 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-8 block">
             Agendamento
           </span>
           <h1 className="font-serif italic text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
@@ -100,7 +100,7 @@ function Agendamento() {
       <section className="px-6 md:px-10 pb-32">
         <div className="max-w-5xl mx-auto">
           {/* Stepper */}
-          <ol className="grid grid-cols-3 gap-px bg-brand-ink/10 border border-brand-ink/10 mb-16">
+          <ol className="grid grid-cols-3 gap-px bg-brand-navy/10 border border-brand-navy/10 mb-16">
             {steps.map((s, i) => {
               const idx = (i + 1) as Step;
               const active = step === idx;
@@ -109,15 +109,15 @@ function Agendamento() {
                 <li
                   key={s.n}
                   className={cn(
-                    "bg-brand-bone p-6 md:p-8 flex items-baseline gap-4",
+                    "bg-brand-cream p-6 md:p-8 flex items-baseline gap-4",
                     active && "bg-white",
                     done && "opacity-60",
                   )}
                 >
-                  <span className="font-serif italic text-2xl text-brand-gold">{s.n}</span>
+                  <span className="font-serif italic text-2xl text-brand-teal">{s.n}</span>
                   <span className={cn(
                     "text-[10px] uppercase tracking-[0.2em]",
-                    active ? "text-brand-ink" : "text-brand-ink/50",
+                    active ? "text-brand-navy" : "text-brand-navy/50",
                   )}>
                     {s.label}
                   </span>
@@ -130,15 +130,15 @@ function Agendamento() {
           {step === 1 && (
             <div className="space-y-10">
               <h2 className="font-serif italic text-3xl md:text-4xl">Qual cuidado procura?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-ink/10 border border-brand-ink/10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
                 {treatments.map((t) => (
                   <button
                     key={t}
                     type="button"
                     onClick={() => setTreatment(t)}
                     className={cn(
-                      "bg-brand-bone p-6 text-left text-sm transition-colors",
-                      treatment === t ? "bg-brand-ink text-brand-bone" : "hover:bg-white",
+                      "bg-brand-cream p-6 text-left text-sm transition-colors",
+                      treatment === t ? "bg-brand-navy text-brand-cream" : "hover:bg-white",
                     )}
                   >
                     <span className="block text-[10px] uppercase tracking-[0.2em] mb-2 opacity-50">
@@ -157,7 +157,7 @@ function Agendamento() {
             <div className="space-y-10">
               <h2 className="font-serif italic text-3xl md:text-4xl">Escolha data e horário.</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="border border-brand-ink/10 bg-brand-bone p-4 inline-block">
+                <div className="border border-brand-navy/10 bg-brand-cream p-4 inline-block">
                   <Calendar
                     mode="single"
                     selected={date}
@@ -168,15 +168,15 @@ function Agendamento() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60 mb-6">
+                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 mb-6">
                     Horários disponíveis
                     {date && (
-                      <span className="block mt-2 text-brand-gold normal-case tracking-normal text-xs font-serif italic">
+                      <span className="block mt-2 text-brand-teal normal-case tracking-normal text-xs font-serif italic">
                         {format(date, "EEEE, d 'de' MMMM", { locale: ptBR })}
                       </span>
                     )}
                   </h3>
-                  <div className="grid grid-cols-3 gap-px bg-brand-ink/10 border border-brand-ink/10">
+                  <div className="grid grid-cols-3 gap-px bg-brand-navy/10 border border-brand-navy/10">
                     {times.map((t) => (
                       <button
                         key={t}
@@ -184,8 +184,8 @@ function Agendamento() {
                         disabled={!date}
                         onClick={() => setTime(t)}
                         className={cn(
-                          "bg-brand-bone py-4 text-sm font-serif italic transition-colors",
-                          time === t ? "bg-brand-ink text-brand-bone" : "hover:bg-white",
+                          "bg-brand-cream py-4 text-sm font-serif italic transition-colors",
+                          time === t ? "bg-brand-navy text-brand-cream" : "hover:bg-white",
                           !date && "opacity-40 cursor-not-allowed",
                         )}
                       >
@@ -220,23 +220,23 @@ function Agendamento() {
               </div>
 
               {/* Summary */}
-              <div className="border border-brand-ink/10 bg-white/60 p-8">
-                <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-6">
+              <div className="border border-brand-navy/10 bg-white/60 p-8">
+                <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6">
                   Resumo da solicitação
                 </h3>
                 <dl className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                   <div>
-                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/40 mb-2">Tratamento</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Tratamento</dt>
                     <dd className="font-serif italic text-lg">{treatment}</dd>
                   </div>
                   <div>
-                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/40 mb-2">Data</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Data</dt>
                     <dd className="font-serif italic text-lg">
                       {date ? format(date, "d 'de' MMMM", { locale: ptBR }) : "—"}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/40 mb-2">Horário</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Horário</dt>
                     <dd className="font-serif italic text-lg">{time || "—"}</dd>
                   </div>
                 </dl>
@@ -254,13 +254,13 @@ function Agendamento() {
           {/* Step 4 — confirmation */}
           {step === 4 && (
             <div className="py-20 text-center max-w-2xl mx-auto">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold block mb-8">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal block mb-8">
                 Solicitação enviada
               </span>
               <h2 className="font-serif italic text-4xl md:text-5xl mb-8 leading-tight">
                 Obrigado, {nome.split(" ")[0] || "paciente"}.
               </h2>
-              <p className="text-sm text-brand-ink/65 leading-relaxed mb-12">
+              <p className="text-sm text-brand-navy/65 leading-relaxed mb-12">
                 Recebemos seu pedido para <strong>{treatment}</strong> em{" "}
                 <strong>{date && format(date, "d 'de' MMMM", { locale: ptBR })}</strong> às{" "}
                 <strong>{time}</strong>. Nossa equipe confirmará seu horário em até duas horas úteis pelos canais informados.
@@ -268,7 +268,7 @@ function Agendamento() {
               <button
                 type="button"
                 onClick={reset}
-                className="inline-flex items-center gap-3 px-8 py-5 border border-brand-ink/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-ink hover:text-brand-bone transition-all duration-500"
+                className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-cream transition-all duration-500"
               >
                 Fazer outra reserva →
               </button>
@@ -283,12 +283,12 @@ function Agendamento() {
 }
 
 const fieldClass =
-  "rounded-none border-0 border-b border-brand-ink/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-gold";
+  "rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block space-y-3">
-      <span className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60">{label}</span>
+      <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">{label}</span>
       {children}
     </label>
   );
@@ -306,12 +306,12 @@ function NavButtons({
   nextLabel?: string;
 }) {
   return (
-    <div className="flex items-center justify-between pt-8 border-t border-brand-ink/10">
+    <div className="flex items-center justify-between pt-8 border-t border-brand-navy/10">
       {onBack ? (
         <button
           type="button"
           onClick={onBack}
-          className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60 hover:text-brand-ink"
+          className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 hover:text-brand-navy"
         >
           ← Voltar
         </button>
@@ -325,8 +325,8 @@ function NavButtons({
         className={cn(
           "inline-flex items-center gap-3 px-8 py-5 border rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-500",
           canNext
-            ? "border-brand-ink/15 hover:bg-brand-ink hover:text-brand-bone"
-            : "border-brand-ink/10 opacity-40 cursor-not-allowed",
+            ? "border-brand-navy/15 hover:bg-brand-navy hover:text-brand-cream"
+            : "border-brand-navy/10 opacity-40 cursor-not-allowed",
         )}
       >
         {nextLabel} →

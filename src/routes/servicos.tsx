@@ -76,7 +76,7 @@ const treatments = [
 
 function Servicos() {
   return (
-    <div className="min-h-screen bg-brand-bone text-brand-ink font-sans selection:bg-brand-gold/20">
+    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans selection:bg-brand-teal/20">
       <SiteHeader />
 
       {/* Hero */}
@@ -89,10 +89,10 @@ function Servicos() {
             height={900}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brand-bone/40" />
+          <div className="absolute inset-0 bg-brand-cream/40" />
         </div>
         <div className="relative z-10 max-w-4xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-ink/60 mb-6 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy/60 mb-6 block">
             Curadoria de tratamentos
           </span>
           <h1 className="font-serif text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] italic">
@@ -102,12 +102,12 @@ function Servicos() {
       </section>
 
       {/* Intro */}
-      <section className="px-6 md:px-10 py-24 border-b border-brand-ink/10">
+      <section className="px-6 md:px-10 py-24 border-b border-brand-navy/10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal">
             Nossa abordagem
           </span>
-          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed font-serif italic text-brand-ink/80">
+          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed font-serif italic text-brand-navy/80">
             Toda especialidade abaixo é precedida por uma avaliação fotográfica
             tridimensional, simulação digital e uma conversa de quarenta minutos
             sobre desejos, hábitos e arquitetura facial.
@@ -118,34 +118,34 @@ function Servicos() {
       {/* Treatments grid */}
       <section className="px-6 md:px-10 py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-ink/10 border border-brand-ink/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {treatments.map((t) => (
               <article
                 key={t.title}
-                className="bg-brand-bone p-10 md:p-14 hover:bg-white transition-colors duration-500 flex flex-col"
+                className="bg-brand-cream p-10 md:p-14 hover:bg-white transition-colors duration-500 flex flex-col"
               >
                 <div className="flex items-baseline justify-between mb-10">
-                  <span className="font-serif italic text-brand-gold text-3xl">{t.n}</span>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/30">
+                  <span className="font-serif italic text-brand-teal text-3xl">{t.n}</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/30">
                     Tratamento
                   </span>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
-                <p className="text-sm leading-relaxed text-brand-ink/65 mb-8">{t.desc}</p>
+                <p className="text-sm leading-relaxed text-brand-navy/65 mb-8">{t.desc}</p>
                 <ul className="space-y-3 mb-10">
                   {t.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex gap-3 text-xs text-brand-ink/70 border-t border-brand-ink/5 pt-3"
+                      className="flex gap-3 text-xs text-brand-navy/70 border-t border-brand-navy/5 pt-3"
                     >
-                      <span className="text-brand-gold">·</span>
+                      <span className="text-brand-teal">·</span>
                       <span>{b}</span>
                     </li>
                   ))}
                 </ul>
                 <Link
                   to="/agendamento"
-                  className="mt-auto self-start text-[10px] uppercase tracking-[0.2em] text-brand-ink/70 hover:text-brand-gold transition-colors border-b border-brand-ink/20 pb-1"
+                  className="mt-auto self-start text-[10px] uppercase tracking-[0.2em] text-brand-navy/70 hover:text-brand-teal transition-colors border-b border-brand-navy/20 pb-1"
                 >
                   Agendar avaliação →
                 </Link>

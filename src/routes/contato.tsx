@@ -68,12 +68,12 @@ function Contato() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-bone text-brand-ink font-sans">
+    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
       <SiteHeader />
 
       <section className="pt-40 pb-16 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-8 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-8 block">
             Contato
           </span>
           <h1 className="font-serif italic text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
@@ -92,14 +92,14 @@ function Contato() {
               width={1200}
               height={800}
               loading="lazy"
-              className="w-full aspect-[3/2] object-cover border border-brand-gold/30"
+              className="w-full aspect-[3/2] object-cover border border-brand-teal/30"
             />
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4">
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4">
                 Endereço
               </h3>
-              <p className="text-sm leading-relaxed text-brand-ink/75">
+              <p className="text-sm leading-relaxed text-brand-navy/75">
                 Avenida das Artes, 1020 · 4º andar
                 <br />
                 Jardins — São Paulo, SP
@@ -109,10 +109,10 @@ function Contato() {
             </div>
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4">
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4">
                 Horários
               </h3>
-              <p className="text-sm leading-relaxed text-brand-ink/75">
+              <p className="text-sm leading-relaxed text-brand-navy/75">
                 Segunda a sexta · 09h às 19h
                 <br />
                 Sábado · sob agendamento
@@ -120,10 +120,10 @@ function Contato() {
             </div>
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4">
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4">
                 Canais
               </h3>
-              <p className="text-sm leading-relaxed text-brand-ink/75">
+              <p className="text-sm leading-relaxed text-brand-navy/75">
                 +55 11 3000-0000
                 <br />
                 +55 11 90000-0000 · WhatsApp
@@ -134,8 +134,8 @@ function Contato() {
           </div>
 
           {/* Form column */}
-          <div className="md:col-span-7 md:border-l md:border-brand-ink/10 md:pl-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-ink/40 mb-6 block">
+          <div className="md:col-span-7 md:border-l md:border-brand-navy/10 md:pl-16">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy/40 mb-6 block">
               Envie sua mensagem
             </span>
             <h2 className="font-serif italic text-3xl md:text-4xl mb-12">
@@ -150,12 +150,12 @@ function Contato() {
                     name="nome"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60">Nome</FormLabel>
+                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">Nome</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             placeholder="Como podemos chamá-lo"
-                            className="rounded-none border-0 border-b border-brand-ink/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-gold"
+                            className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>
                         <FormMessage />
@@ -167,13 +167,13 @@ function Contato() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60">E-mail</FormLabel>
+                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">E-mail</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             type="email"
                             placeholder="seu@email.com"
-                            className="rounded-none border-0 border-b border-brand-ink/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-gold"
+                            className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>
                         <FormMessage />
@@ -188,12 +188,12 @@ function Contato() {
                     name="telefone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60">Telefone</FormLabel>
+                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">Telefone</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             placeholder="(11) 90000-0000"
-                            className="rounded-none border-0 border-b border-brand-ink/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-gold"
+                            className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>
                         <FormMessage />
@@ -205,10 +205,10 @@ function Contato() {
                     name="assunto"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60">Assunto</FormLabel>
+                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">Assunto</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
-                            <SelectTrigger className="rounded-none border-0 border-b border-brand-ink/20 bg-transparent px-0 focus:ring-0 focus:border-brand-gold">
+                            <SelectTrigger className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus:ring-0 focus:border-brand-teal">
                               <SelectValue placeholder="Selecione" />
                             </SelectTrigger>
                           </FormControl>
@@ -231,13 +231,13 @@ function Contato() {
                   name="mensagem"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/60">Mensagem</FormLabel>
+                      <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">Mensagem</FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
                           rows={5}
                           placeholder="Conte um pouco sobre o que procura"
-                          className="rounded-none border-0 border-b border-brand-ink/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-gold resize-none"
+                          className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal resize-none"
                         />
                       </FormControl>
                       <FormMessage />
@@ -247,7 +247,7 @@ function Contato() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-ink/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-ink hover:text-brand-bone transition-all duration-500"
+                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-cream transition-all duration-500"
                 >
                   Enviar mensagem →
                 </button>

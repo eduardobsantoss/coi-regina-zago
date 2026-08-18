@@ -38,13 +38,13 @@ const team = [
 
 function Sobre() {
   return (
-    <div className="min-h-screen bg-brand-bone text-brand-ink font-sans">
+    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
       <SiteHeader />
 
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-8 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-8 block">
             A Prática
           </span>
           <h1 className="font-serif italic text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
@@ -67,10 +67,10 @@ function Sobre() {
       </section>
 
       {/* Manifesto */}
-      <section className="px-6 md:px-10 py-32 bg-brand-ink text-brand-bone">
+      <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-cream">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal">
               Manifesto
             </span>
           </div>
@@ -79,13 +79,13 @@ function Sobre() {
               Acreditamos que um sorriso não é um produto — é uma proporção. Uma
               relação silenciosa entre osso, gengiva, lábio e luz.
             </p>
-            <p className="text-brand-bone/70">
+            <p className="text-brand-cream/70">
               A Éclat foi fundada com a recusa do consultório como local de
               ansiedade. Reorganizamos cada gesto — do som da campainha ao
               perfume da recepção — para devolver à odontologia o seu caráter
               cuidadoso e profundamente humano.
             </p>
-            <p className="text-brand-bone/70">
+            <p className="text-brand-cream/70">
               Trabalhamos com poucos casos por dia, em diálogo direto entre
               especialistas, ceramistas e o paciente. Cada plano nasce de uma
               conversa, não de um protocolo.
@@ -98,17 +98,17 @@ function Sobre() {
       <section className="px-6 md:px-10 py-32">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4 block">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4 block">
               Linha do tempo
             </span>
             <h2 className="font-serif italic text-4xl md:text-5xl">Marcos do atelier</h2>
           </div>
-          <ol className="grid grid-cols-1 md:grid-cols-4 gap-px bg-brand-ink/10 border border-brand-ink/10">
+          <ol className="grid grid-cols-1 md:grid-cols-4 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {timeline.map((m) => (
-              <li key={m.year} className="bg-brand-bone p-10">
-                <div className="font-serif text-5xl italic text-brand-gold mb-6">{m.year}</div>
+              <li key={m.year} className="bg-brand-cream p-10">
+                <div className="font-serif text-5xl italic text-brand-teal mb-6">{m.year}</div>
                 <h3 className="font-medium mb-3">{m.title}</h3>
-                <p className="text-xs leading-relaxed text-brand-ink/60">{m.body}</p>
+                <p className="text-xs leading-relaxed text-brand-navy/60">{m.body}</p>
               </li>
             ))}
           </ol>
@@ -116,40 +116,40 @@ function Sobre() {
       </section>
 
       {/* Team */}
-      <section className="px-6 md:px-10 py-32 border-t border-brand-ink/10">
+      <section className="px-6 md:px-10 py-32 border-t border-brand-navy/10">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4 block">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-4 block">
                 Equipe
               </span>
               <h2 className="font-serif italic text-4xl md:text-5xl">Especialistas residentes</h2>
             </div>
-            <p className="max-w-md text-sm text-brand-ink/60 leading-relaxed">
+            <p className="max-w-md text-sm text-brand-navy/60 leading-relaxed">
               Quatro especialistas que dividem o mesmo espaço físico e o mesmo
               critério. Cada caso é discutido em conjunto antes da primeira
               intervenção.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-ink/10 border border-brand-ink/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {team.map((p) => (
-              <article key={p.name} className="bg-brand-bone p-10 md:p-12">
-                <div className="aspect-[4/5] mb-8 bg-brand-ink/[0.04] flex items-end p-6 relative">
-                  <span className="font-serif italic text-[8rem] leading-none text-brand-gold/30 absolute top-4 left-6">
+              <article key={p.name} className="bg-brand-cream p-10 md:p-12">
+                <div className="aspect-[4/5] mb-8 bg-brand-navy/[0.04] flex items-end p-6 relative">
+                  <span className="font-serif italic text-[8rem] leading-none text-brand-teal/30 absolute top-4 left-6">
                     {p.name.split(" ").slice(-1)[0][0]}
                   </span>
-                  <span className="font-serif italic text-2xl text-brand-ink/40 relative">
+                  <span className="font-serif italic text-2xl text-brand-navy/40 relative">
                     Retrato em curadoria
                   </span>
                 </div>
                 <h3 className="font-serif text-2xl mb-2">{p.name}</h3>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-brand-gold mb-1">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-brand-teal mb-1">
                   {p.role}
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-brand-ink/40 mb-6">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-6">
                   {p.cro}
                 </p>
-                <p className="text-sm leading-relaxed text-brand-ink/65">{p.bio}</p>
+                <p className="text-sm leading-relaxed text-brand-navy/65">{p.bio}</p>
               </article>
             ))}
           </div>
