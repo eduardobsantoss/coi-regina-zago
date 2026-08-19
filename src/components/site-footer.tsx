@@ -1,4 +1,12 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram, MessageCircle, CalendarCheck } from "lucide-react";
+import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, DOCTORALIA_URL } from "@/lib/contact";
+
+const socials = [
+  { label: "Instagram", href: INSTAGRAM_URL, Icon: Instagram },
+  { label: "WhatsApp", href: WHATSAPP_URL, Icon: MessageCircle },
+  { label: "Doctoralia", href: DOCTORALIA_URL, Icon: CalendarCheck },
+] as const;
 
 export function SiteFooter() {
   return (
@@ -6,7 +14,7 @@ export function SiteFooter() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-24 max-w-7xl mx-auto">
         <div>
           <p className="font-serif text-3xl md:text-4xl mb-10 italic max-w-md">
-            Comece sua transformação.
+            Cuide do seu sorriso com quem entende.
           </p>
           <Link
             to="/agendamento"
@@ -16,13 +24,17 @@ export function SiteFooter() {
             <span aria-hidden>→</span>
           </Link>
           <div className="flex gap-3 mt-10">
-            {["IG", "WA", "LI"].map((s) => (
-              <div
-                key={s}
-                className="size-11 rounded-full border border-brand-navy/15 flex items-center justify-center text-[10px] uppercase tracking-widest cursor-pointer hover:bg-brand-navy hover:text-brand-cream transition-all"
+            {socials.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="size-11 rounded-full border border-brand-navy/15 flex items-center justify-center hover:bg-brand-navy hover:text-brand-cream transition-all"
               >
-                {s}
-              </div>
+                <Icon size={16} strokeWidth={1.75} />
+              </a>
             ))}
           </div>
         </div>
@@ -32,11 +44,11 @@ export function SiteFooter() {
               Localização
             </h4>
             <p className="text-xs leading-relaxed">
-              Avenida das Artes, 1020
+              R. Cel. Antônio Rios, 1097 · Sala 1107-B
               <br />
-              Jardins — São Paulo, SP
+              Santa Marta — Uberaba, MG
               <br />
-              01409-000
+              38061-150
             </p>
           </div>
           <div>
@@ -44,7 +56,7 @@ export function SiteFooter() {
               Horários
             </h4>
             <p className="text-xs leading-relaxed">
-              Seg — Sex: 09h — 19h
+              Seg — Sex: 08h — 18h
               <br />
               Sáb: Sob agendamento
               <br />
@@ -56,9 +68,11 @@ export function SiteFooter() {
               Contato
             </h4>
             <p className="text-xs leading-relaxed">
-              +55 11 3000-0000
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-deep">
+                {PHONE_DISPLAY}
+              </a>
               <br />
-              ola@eclat.odo.br
+              WhatsApp
             </p>
           </div>
           <div>
@@ -66,16 +80,16 @@ export function SiteFooter() {
               Navegação
             </h4>
             <ul className="text-xs leading-relaxed space-y-1">
-              <li><Link to="/servicos" className="hover:text-brand-teal">Serviços</Link></li>
-              <li><Link to="/sobre" className="hover:text-brand-teal">A Prática</Link></li>
-              <li><Link to="/agendamento" className="hover:text-brand-teal">Agendamento</Link></li>
-              <li><Link to="/contato" className="hover:text-brand-teal">Contato</Link></li>
+              <li><Link to="/servicos" className="hover:text-brand-teal-deep">Serviços</Link></li>
+              <li><Link to="/sobre" className="hover:text-brand-teal-deep">A Prática</Link></li>
+              <li><Link to="/agendamento" className="hover:text-brand-teal-deep">Agendamento</Link></li>
+              <li><Link to="/contato" className="hover:text-brand-teal-deep">Contato</Link></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center text-[8px] uppercase tracking-[0.3em] text-brand-navy/30">
-        <span>© 2026 Éclat Odontologia — CRO/SP 00000</span>
+        <span>© 2026 Centro Odontológico Integral — Dra. Regina B. Zago — CRO 20.070 | CRO 1277</span>
         <span>Termos · Privacidade · Cookies</span>
       </div>
     </footer>
