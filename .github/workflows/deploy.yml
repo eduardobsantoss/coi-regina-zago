@@ -19,13 +19,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # TanStack Start requires Node >=22.12.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
+
+      # Node 22 ships npm 10, whose handling of optional peer deps (unstorage's
+      # lru-cache) disagrees with the npm 11 lockfile in this repo: `npm ci` aborts
+      # with "Missing: lru-cache@11.5.2 from lock file". Match the npm that wrote it.
+      - run: npm install -g npm@11
 
       - run: npm ci
 
