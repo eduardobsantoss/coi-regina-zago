@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
-import studyImg from "@/assets/study.jpg";
+import reginaPortrait from "@/assets/site/regina-portrait.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -123,10 +123,10 @@ function Index() {
                 Puramente pessoal.
               </h2>
               <img
-                src={studyImg}
-                alt="Espelho odontológico sobre mármore"
-                width={768}
-                height={1024}
+                src={reginaPortrait}
+                alt="Dra. Regina Zago no consultório"
+                width={900}
+                height={1200}
                 loading="lazy"
                 className="w-full aspect-[3/4] object-cover outline-1 -outline-offset-1 outline-white/10"
               />
