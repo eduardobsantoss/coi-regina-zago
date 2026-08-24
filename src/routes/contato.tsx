@@ -89,11 +89,9 @@ function Contato() {
             <iframe
               title="Localização do Centro Odontológico Integral no Google Maps"
               src={MAPS_EMBED_URL}
-              width={1200}
-              height={800}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full aspect-[3/2] border border-brand-teal/30"
+              className="block w-full aspect-[16/6.2] border border-brand-teal/30"
             />
 
             <div>
