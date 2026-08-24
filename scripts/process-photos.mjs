@@ -11,8 +11,9 @@ const OUT = "src/assets/site";
 
 await mkdir(OUT, { recursive: true });
 
-async function process(input, output, { width, height, quality = 84 } = {}) {
+async function process(input, output, { width, height, quality = 84, extract } = {}) {
   let img = sharp(`${SRC}/${input}`).rotate(); // rotate() auto-applies EXIF orientation
+  if (extract) img = img.extract(extract);
   if (width && height) {
     img = img.resize(width, height, { fit: "cover", position: "attention" });
   } else if (width) {
@@ -28,6 +29,17 @@ await process("Regina1.jpg", "regina-portrait.jpg", { width: 900, height: 1200 }
 
 // Clinic entrance/hallway — already native 3:4, just resized for the web.
 await process("consultorio.jpg", "consultorio-entrada.jpg", { width: 900, height: 1200 });
+
+// Portrait for the "A Profissional" bio slot on the sobre page — crop to just
+// her face/shoulders (the rest of the source photo is a patient poster behind
+// her that competes for attention in a professional bio shot). The extract
+// box already matches the 4:5 target ratio so the resize below doesn't need
+// to auto-crop (and potentially drift back toward the poster) on top of it.
+await process("consultorio2.jpg", "regina-bio.jpg", {
+  extract: { left: 15, top: 130, width: 258, height: 322 },
+  width: 700,
+  height: 875,
+});
 
 // Before/after results — uniform square crop for a clean grid.
 const results = [

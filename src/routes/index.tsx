@@ -3,6 +3,7 @@ import heroImg from "@/assets/hero.jpg";
 import reginaPortrait from "@/assets/site/regina-portrait.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -135,11 +136,16 @@ function Index() {
 
           <div className="md:col-span-6 md:col-start-7 md:pt-32">
             <div className="space-y-24">
-              {philosophy.map((p) => (
+              {philosophy.map((p, i) => (
                 <div key={p.title} className="border-l border-brand-teal/30 pl-8">
                   <h3 className="text-lg font-medium mb-4">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-brand-cream/60 mb-6">{p.body}</p>
-                  <span className="inline-block text-[10px] tracking-widest text-brand-navy uppercase bg-brand-gold rounded-full px-3 py-1">
+                  <span
+                    className={cn(
+                      "inline-block text-[10px] tracking-widest text-brand-navy uppercase rounded-full px-3 py-1",
+                      i % 2 === 0 ? "bg-brand-gold" : "bg-brand-rose",
+                    )}
+                  >
                     {p.tag}
                   </span>
                 </div>
@@ -190,7 +196,7 @@ function Index() {
       </section>
 
       {/* Social proof */}
-      <section className="py-40 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-blush/15">
+      <section className="py-40 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-blush/35">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-10 block">
             03 / Confiança

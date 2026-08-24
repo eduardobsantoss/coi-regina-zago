@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import consultorioEntrada from "@/assets/site/consultorio-entrada.jpg";
+import reginaBio from "@/assets/site/regina-bio.jpg";
 import resultado1 from "@/assets/site/resultado-1.jpg";
 import resultado2 from "@/assets/site/resultado-2.jpg";
 import resultado3 from "@/assets/site/resultado-3.jpg";
@@ -75,9 +76,17 @@ function Sobre() {
       <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-cream">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               A Profissional
             </span>
+            <img
+              src={reginaBio}
+              alt="Dra. Regina Zago"
+              width={700}
+              height={875}
+              loading="lazy"
+              className="w-full max-w-xs aspect-[4/5] object-cover outline-1 -outline-offset-1 outline-white/10"
+            />
           </div>
           <div className="md:col-span-8 space-y-8 font-serif text-2xl md:text-3xl italic leading-tight">
             <p>
