@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import logoMark from "@/assets/site/logo-icon-mark.png";
 
 const links = [
   { to: "/servicos", label: "Serviços" },
@@ -38,10 +39,11 @@ export function SiteHeader() {
       <Link
         to="/"
         className={cn(
-          "text-lg md:text-xl font-serif italic tracking-tight",
+          "flex items-center gap-2.5 text-lg md:text-xl font-serif italic tracking-tight",
           overlay && "drop-shadow-[0_1px_12px_rgba(247,243,234,0.9)]",
         )}
       >
+        <img src={logoMark} alt="" width={28} height={32} className="h-7 w-auto" />
         COI · Dra. Regina Zago
       </Link>
       <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] text-brand-navy/70">

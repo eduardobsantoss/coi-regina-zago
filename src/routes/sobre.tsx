@@ -1,7 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import aboutHero from "@/assets/about-hero.jpg";
+import consultorioEntrada from "@/assets/site/consultorio-entrada.jpg";
+import reginaBio from "@/assets/site/regina-bio.jpg";
+import resultado1 from "@/assets/site/resultado-1.jpg";
+import resultado2 from "@/assets/site/resultado-2.jpg";
+import resultado3 from "@/assets/site/resultado-3.jpg";
+import resultado4 from "@/assets/site/resultado-4.jpg";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -35,6 +40,8 @@ const credentials = [
   { title: "Atendimento", body: "Consultas com hora marcada, avaliação individual e plano de tratamento personalizado." },
 ];
 
+const results = [resultado1, resultado2, resultado3, resultado4];
+
 function Sobre() {
   return (
     <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
@@ -55,12 +62,12 @@ function Sobre() {
       <section className="px-6 md:px-10 pb-24">
         <div className="max-w-6xl mx-auto">
           <img
-            src={aboutHero}
-            alt="Sala de espera do Centro Odontológico Integral"
-            width={1600}
-            height={1100}
+            src={consultorioEntrada}
+            alt="Entrada do Centro Odontológico Integral"
+            width={900}
+            height={1200}
             loading="lazy"
-            className="w-full aspect-[16/10] object-cover"
+            className="w-full max-w-md mx-auto aspect-[3/4] object-cover"
           />
         </div>
       </section>
@@ -69,9 +76,17 @@ function Sobre() {
       <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-cream">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               A Profissional
             </span>
+            <img
+              src={reginaBio}
+              alt="Dra. Regina Zago"
+              width={700}
+              height={875}
+              loading="lazy"
+              className="w-full max-w-xs aspect-[4/5] object-cover outline-1 -outline-offset-1 outline-white/10"
+            />
           </div>
           <div className="md:col-span-8 space-y-8 font-serif text-2xl md:text-3xl italic leading-tight">
             <p>
@@ -132,6 +147,31 @@ function Sobre() {
                 </h3>
                 <p className="text-base leading-relaxed text-brand-navy">{c.body}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section className="px-6 md:px-10 py-32 border-t border-brand-navy/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+              Resultados
+            </span>
+            <h2 className="font-serif italic text-4xl md:text-5xl">Sorrisos reais, pacientes reais</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-navy/10 border border-brand-navy/10">
+            {results.map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Antes e depois de tratamento realizado pela Dra. Regina Zago ${i + 1}`}
+                width={900}
+                height={900}
+                loading="lazy"
+                className="w-full aspect-square object-cover bg-brand-cream"
+              />
             ))}
           </div>
         </div>

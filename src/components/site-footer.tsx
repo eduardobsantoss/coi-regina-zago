@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, CalendarCheck } from "lucide-react";
 import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, DOCTORALIA_URL } from "@/lib/contact";
+import logo from "@/assets/site/logo-icon.png";
 
 const socials = [
   { label: "Instagram", href: INSTAGRAM_URL, Icon: Instagram },
@@ -13,6 +14,7 @@ export function SiteFooter() {
     <footer className="pt-32 pb-12 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-cream text-brand-navy">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-24 max-w-7xl mx-auto">
         <div>
+          <img src={logo} alt="COI · Centro Odontológico Integral" width={198} height={158} className="h-24 w-auto mb-10" />
           <p className="font-serif text-3xl md:text-4xl mb-10 italic max-w-md">
             Cuide do seu sorriso com quem entende.
           </p>
