@@ -120,8 +120,8 @@ function Index() {
                 01 / Identidade
               </span>
               <h2 className="font-heading font-semibold text-4xl md:text-5xl leading-tight mb-8">
-                Além do clínico. <br />
-                Puramente pessoal.
+                Mais que uma clínica. <br />
+                Uma trajetória de confiança.
               </h2>
               <img
                 src={reginaPortrait}
