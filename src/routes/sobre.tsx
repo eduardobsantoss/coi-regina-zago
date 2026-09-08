@@ -44,7 +44,7 @@ const results = [resultado1, resultado2, resultado3, resultado4];
 
 function Sobre() {
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
+    <div className="min-h-screen bg-brand-white text-brand-navy font-sans">
       <SiteHeader />
 
       {/* Hero */}
@@ -53,7 +53,7 @@ function Sobre() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             A Prática
           </span>
-          <h1 className="font-serif italic text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
+          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
             Mais de 30 anos cuidando de sorrisos em Uberaba.
           </h1>
         </div>
@@ -73,7 +73,7 @@ function Sobre() {
       </section>
 
       {/* Bio */}
-      <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-cream">
+      <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
@@ -88,17 +88,17 @@ function Sobre() {
               className="w-full max-w-xs aspect-[4/5] object-cover outline-1 -outline-offset-1 outline-white/10"
             />
           </div>
-          <div className="md:col-span-8 space-y-8 font-serif text-2xl md:text-3xl italic leading-tight">
+          <div className="md:col-span-8 space-y-8 text-2xl md:text-3xl leading-tight">
             <p>
               Regina Beatriz Zago é cirurgiã-dentista formada pela Universidade de Uberaba, com
               especialização em Periodontia pela Associação Brasileira de Odontologia (ABO) desde 2002.
             </p>
-            <p className="text-brand-cream/70">
+            <p className="text-brand-white/70">
               Há mais de três décadas à frente do Centro Odontológico Integral (COI), já atendeu
               mais de 4.300 pacientes em Uberaba — muitos deles acompanhados há anos, entre
               gerações da mesma família.
             </p>
-            <p className="text-brand-cream/70">
+            <p className="text-brand-white/70">
               Acredita que cuidar de um sorriso é, antes de tudo, cuidar de uma pessoa inteira: com
               escuta, paciência e atenção aos detalhes que fazem a diferença entre um tratamento e
               um cuidado de verdade.
@@ -114,12 +114,12 @@ function Sobre() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Trajetória
             </span>
-            <h2 className="font-serif italic text-4xl md:text-5xl">Marcos da carreira</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl">Marcos da carreira</h2>
           </div>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {timeline.map((m) => (
-              <li key={m.year} className="bg-brand-cream p-10">
-                <div className="font-serif text-5xl italic text-brand-teal-deep mb-6">{m.year}</div>
+              <li key={m.year} className="bg-brand-white p-10">
+                <div className="font-sans font-semibold tracking-tight text-5xl text-brand-teal-deep mb-6">{m.year}</div>
                 <h3 className="font-medium mb-3">{m.title}</h3>
                 <p className="text-xs leading-relaxed text-brand-navy/60">{m.body}</p>
               </li>
@@ -136,12 +136,12 @@ function Sobre() {
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
                 Credenciais
               </span>
-              <h2 className="font-serif italic text-4xl md:text-5xl">Por que confiar seu sorriso a nós</h2>
+              <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl">Por que confiar seu sorriso a nós</h2>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {credentials.map((c) => (
-              <article key={c.title} className="bg-brand-cream p-10 md:p-12">
+              <article key={c.title} className="bg-brand-white p-10 md:p-12">
                 <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-teal-deep mb-4">
                   {c.title}
                 </h3>
@@ -159,7 +159,7 @@ function Sobre() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Resultados
             </span>
-            <h2 className="font-serif italic text-4xl md:text-5xl">Sorrisos reais, pacientes reais</h2>
+            <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl">Sorrisos reais, pacientes reais</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {results.map((src, i) => (
@@ -170,7 +170,7 @@ function Sobre() {
                 width={900}
                 height={900}
                 loading="lazy"
-                className="w-full aspect-square object-cover bg-brand-cream"
+                className="w-full aspect-square object-cover bg-brand-white"
               />
             ))}
           </div>

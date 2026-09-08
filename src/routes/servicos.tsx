@@ -76,7 +76,7 @@ const treatments = [
 
 function Servicos() {
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans selection:bg-brand-teal/20">
+    <div className="min-h-screen bg-brand-white text-brand-navy font-sans selection:bg-brand-teal/20">
       <SiteHeader />
 
       {/* Hero */}
@@ -89,13 +89,13 @@ function Servicos() {
             height={900}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brand-cream/40" />
+          <div className="absolute inset-0 bg-brand-white/40" />
         </div>
         <div className="relative z-10 max-w-4xl">
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy/60 mb-6 block">
             Tratamentos
           </span>
-          <h1 className="font-serif text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] italic">
+          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95]">
             Cuidado odontológico<br />completo, em um só lugar.
           </h1>
         </div>
@@ -107,7 +107,7 @@ function Servicos() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep">
             Nossa abordagem
           </span>
-          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed font-serif italic text-brand-navy/80">
+          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed text-brand-navy/80">
             Como o nome do consultório propõe, cuidamos da sua saúde bucal de forma integral —
             com diagnóstico, tratamento e acompanhamento no mesmo lugar, com a mesma equipe.
           </p>
@@ -121,15 +121,15 @@ function Servicos() {
             {treatments.map((t) => (
               <article
                 key={t.title}
-                className="bg-brand-cream p-10 md:p-14 hover:bg-brand-mist transition-colors duration-500 flex flex-col"
+                className="bg-brand-white p-10 md:p-14 hover:bg-brand-mist transition-colors duration-500 flex flex-col"
               >
                 <div className="flex items-baseline justify-between mb-10">
-                  <span className="font-serif italic text-brand-teal-deep text-3xl">{t.n}</span>
+                  <span className="font-sans font-semibold tracking-tight text-brand-teal-deep text-3xl">{t.n}</span>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/30">
                     Tratamento
                   </span>
                 </div>
-                <h2 className="font-serif text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
+                <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
                 <p className="text-sm leading-relaxed text-brand-navy/65 mb-8">{t.desc}</p>
                 <ul className="space-y-3 mb-10">
                   {t.bullets.map((b) => (

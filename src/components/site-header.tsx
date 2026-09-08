@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import logoMark from "@/assets/site/logo-icon-mark.png";
+import logoMark from "@/assets/site/logo-icon.png";
 
 const links = [
   { to: "/servicos", label: "Serviços" },
@@ -33,17 +33,17 @@ export function SiteHeader() {
         "fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-6 flex justify-between items-center text-brand-navy transition-colors duration-300",
         overlay
           ? "bg-transparent"
-          : "bg-brand-cream/95 backdrop-blur-sm border-b border-brand-navy/10",
+          : "bg-brand-white/95 backdrop-blur-sm border-b border-brand-navy/10",
       )}
     >
       <Link
         to="/"
         className={cn(
-          "flex items-center gap-2.5 text-lg md:text-xl font-serif italic tracking-tight",
-          overlay && "drop-shadow-[0_1px_12px_rgba(247,243,234,0.9)]",
+          "flex items-center gap-2.5 text-lg md:text-xl font-sans font-semibold tracking-tight",
+          overlay && "drop-shadow-[0_1px_12px_rgba(255,255,255,0.9)]",
         )}
       >
-        <img src={logoMark} alt="" width={28} height={32} className="h-7 w-auto" />
+        <img src={logoMark} alt="" width={500} height={500} className="h-7 w-7" />
         COI · Dra. Regina Zago
       </Link>
       <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] text-brand-navy/70">
