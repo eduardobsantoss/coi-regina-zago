@@ -92,7 +92,7 @@ function Servicos() {
           <div className="absolute inset-0 bg-brand-white/40" />
         </div>
         <div className="relative z-10 max-w-4xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy/60 mb-6 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             Tratamentos
           </span>
           <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95]">
@@ -125,17 +125,17 @@ function Servicos() {
               >
                 <div className="flex items-baseline justify-between mb-10">
                   <span className="font-sans font-semibold tracking-tight text-brand-teal-deep text-3xl">{t.n}</span>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/30">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                     Tratamento
                   </span>
                 </div>
                 <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
-                <p className="text-sm leading-relaxed text-brand-navy/65 mb-8">{t.desc}</p>
+                <p className="text-sm leading-relaxed text-brand-navy-muted mb-8">{t.desc}</p>
                 <ul className="space-y-3 mb-10">
                   {t.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex gap-3 text-xs text-brand-navy/70 border-t border-brand-navy/5 pt-3"
+                      className="flex gap-3 text-xs text-brand-navy-muted border-t border-brand-navy/5 pt-3"
                     >
                       <span className="text-brand-teal-deep">·</span>
                       <span>{b}</span>
@@ -144,7 +144,7 @@ function Servicos() {
                 </ul>
                 <Link
                   to="/agendamento"
-                  className="mt-auto self-start text-[10px] uppercase tracking-[0.2em] text-brand-navy/70 hover:text-brand-teal-deep transition-colors border-b border-brand-navy/20 pb-1"
+                  className="mt-auto self-start text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted hover:text-brand-teal-deep transition-colors border-b border-brand-navy/20 pb-1"
                 >
                   Agendar avaliação →
                 </Link>

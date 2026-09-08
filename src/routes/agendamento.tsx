@@ -105,20 +105,18 @@ function Agendamento() {
             {steps.map((s, i) => {
               const idx = (i + 1) as Step;
               const active = step === idx;
-              const done = step > idx;
               return (
                 <li
                   key={s.n}
                   className={cn(
                     "bg-brand-white p-6 md:p-8 flex items-baseline gap-4",
                     active && "bg-white",
-                    done && "opacity-60",
                   )}
                 >
                   <span className="font-sans font-semibold tracking-tight text-2xl text-brand-teal-deep">{s.n}</span>
                   <span className={cn(
                     "text-[10px] uppercase tracking-[0.2em]",
-                    active ? "text-brand-navy" : "text-brand-navy/50",
+                    active ? "text-brand-navy" : "text-brand-navy-muted",
                   )}>
                     {s.label}
                   </span>
@@ -142,7 +140,13 @@ function Agendamento() {
                       treatment === t ? "bg-brand-navy text-brand-white" : "hover:bg-brand-mist",
                     )}
                   >
-                    <span className="block text-[10px] uppercase tracking-[0.2em] mb-2 opacity-50">
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "block text-[10px] uppercase tracking-[0.2em] mb-2",
+                        treatment === t ? "text-brand-white/60" : "text-brand-navy-muted",
+                      )}
+                    >
                       Tratamento
                     </span>
                     {t}
@@ -169,7 +173,7 @@ function Agendamento() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 mb-6">
+                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-6">
                     Horários disponíveis
                     {date && (
                       <span className="block mt-2 text-brand-teal-deep normal-case tracking-normal text-xs font-sans font-semibold tracking-tight">
@@ -227,17 +231,17 @@ function Agendamento() {
                 </h3>
                 <dl className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                   <div>
-                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Tratamento</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-2">Tratamento</dt>
                     <dd className="font-sans font-semibold tracking-tight text-lg">{treatment}</dd>
                   </div>
                   <div>
-                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Data</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-2">Data</dt>
                     <dd className="font-sans font-semibold tracking-tight text-lg">
                       {date ? format(date, "d 'de' MMMM", { locale: ptBR }) : "—"}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Horário</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-2">Horário</dt>
                     <dd className="font-sans font-semibold tracking-tight text-lg">{time || "—"}</dd>
                   </div>
                 </dl>
@@ -261,7 +265,7 @@ function Agendamento() {
               <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl mb-8 leading-tight">
                 Obrigado, {nome.split(" ")[0] || "paciente"}.
               </h2>
-              <p className="text-sm text-brand-navy/65 leading-relaxed mb-12">
+              <p className="text-sm text-brand-navy-muted leading-relaxed mb-12">
                 Recebemos seu pedido para <strong>{treatment}</strong> em{" "}
                 <strong>{date && format(date, "d 'de' MMMM", { locale: ptBR })}</strong> às{" "}
                 <strong>{time}</strong>. Nossa equipe confirmará seu horário em até duas horas úteis pelos canais informados.
@@ -289,7 +293,7 @@ const fieldClass =
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block space-y-3">
-      <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60">{label}</span>
+      <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">{label}</span>
       {children}
     </label>
   );
@@ -312,7 +316,7 @@ function NavButtons({
         <button
           type="button"
           onClick={onBack}
-          className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 hover:text-brand-navy"
+          className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted hover:text-brand-navy"
         >
           ← Voltar
         </button>

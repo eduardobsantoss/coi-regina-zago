@@ -46,7 +46,7 @@ export function SiteHeader() {
         <img src={logoMark} alt="" width={500} height={500} className="h-7 w-7" />
         COI · Dra. Regina Zago
       </Link>
-      <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] text-brand-navy/70">
+      <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
         {links.map((l) => (
           <Link
             key={l.to}

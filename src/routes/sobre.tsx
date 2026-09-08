@@ -121,7 +121,7 @@ function Sobre() {
               <li key={m.year} className="bg-brand-white p-10">
                 <div className="font-sans font-semibold tracking-tight text-5xl text-brand-teal-deep mb-6">{m.year}</div>
                 <h3 className="font-medium mb-3">{m.title}</h3>
-                <p className="text-xs leading-relaxed text-brand-navy/60">{m.body}</p>
+                <p className="text-xs leading-relaxed text-brand-navy-muted">{m.body}</p>
               </li>
             ))}
           </ol>

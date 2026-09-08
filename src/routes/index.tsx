@@ -81,7 +81,7 @@ function Index() {
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy/60 mb-8 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-8 block">
             Centro Odontológico Integral — Uberaba, MG
           </span>
           <h1 className="font-sans font-semibold tracking-tight text-[clamp(3rem,8vw,6rem)] leading-[0.9] mb-8">
@@ -89,7 +89,7 @@ function Index() {
             com mais de 30 anos de história.
           </h1>
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            <p className="max-w-md text-sm leading-relaxed text-brand-navy/70">
+            <p className="max-w-md text-sm leading-relaxed text-brand-navy-muted">
               A Dra. Regina Zago acompanha pacientes de Uberaba há mais de três décadas, unindo
               experiência clínica em Periodontia a um atendimento próximo e humano.
             </p>
@@ -167,7 +167,7 @@ function Index() {
             </div>
             <Link
               to="/servicos"
-              className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 hover:text-brand-teal-deep transition-colors"
+              className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted hover:text-brand-teal-deep transition-colors"
             >
               Ver todas as especialidades →
             </Link>
@@ -184,9 +184,9 @@ function Index() {
                   {s.n}
                 </span>
                 <h3 className="font-sans font-semibold tracking-tight text-3xl mb-6">{s.title}</h3>
-                <p className="text-xs leading-relaxed text-brand-navy/60 mb-12">{s.body}</p>
+                <p className="text-xs leading-relaxed text-brand-navy-muted mb-12">{s.body}</p>
                 <div className="w-full h-px bg-brand-navy/5" />
-                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mt-6 block group-hover:text-brand-teal-deep transition-colors">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mt-6 block group-hover:text-brand-teal-deep transition-colors">
                   Explorar →
                 </span>
               </Link>
@@ -204,19 +204,19 @@ function Index() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
               <div className="font-sans font-semibold tracking-tight text-5xl md:text-6xl mb-3">5.0★</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/50">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 124 avaliações no Google
               </p>
             </div>
             <div>
               <div className="font-sans font-semibold tracking-tight text-5xl md:text-6xl mb-3">+4.300</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/50">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 Pacientes atendidos
               </p>
             </div>
             <div>
               <div className="font-sans font-semibold tracking-tight text-5xl md:text-6xl mb-3">30+</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/50">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 Anos de experiência
               </p>
             </div>
