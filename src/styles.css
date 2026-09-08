@@ -33,11 +33,36 @@
   --color-brand-teal-deep: #12797e;
   --color-brand-salmon: #f4d5c1;
   --color-brand-mist: #e3f1ef;
-  /* "Gontserrat" (the manual's custom letter-tightened Montserrat) isn't a
-     distributable web font, so headings use Montserrat SemiBold with
-     tighter tracking (see the font-sans font-semibold tracking-tight
-     pattern used throughout) to approximate it instead. */
+  /* Solid "muted text" navy — text-brand-navy/40, /50, /60 etc. look like an
+     easy way to get a softer secondary color, but diluting an already-dark
+     color toward a light background is exactly backwards for contrast: navy
+     needs ≥75% opacity on white just to clear 4.5:1, and most uses in this
+     codebase sat well below that (measured as low as 1.4:1 on the live
+     site). This is a standalone color tuned to pass AA on its own, not a
+     transparency of brand-navy. */
+  --color-brand-navy-muted: #427285;
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  /* Gontserrat — the manual's custom letter-tightened Montserrat, used for
+     headings and the logotype. Self-hosted from the client-supplied font
+     files (src/assets/fonts/, @font-face below); Medium/SemiBold only, the
+     two weights actually used on the site. */
+  --font-heading: "Gontserrat", "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Gontserrat";
+  src: url("./assets/fonts/Gontserrat-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gontserrat";
+  src: url("./assets/fonts/Gontserrat-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
@@ -96,7 +121,10 @@
   --secondary: oklch(0.88 0.045 50);
   --secondary-foreground: oklch(0.35 0.06 220);
   --muted: oklch(0.96 0.005 90);
-  --muted-foreground: oklch(0.5 0.03 220);
+  /* Matches --color-brand-navy-muted (#427285) — see the note by that token;
+     the shadcn default here was low enough to make Calendar's disabled/
+     outside-month day numbers nearly invisible (~1.4:1). */
+  --muted-foreground: oklch(0.48 0.06 220);
   --accent: oklch(0.79 0.11 195);
   --accent-foreground: oklch(0.35 0.06 220);
   --destructive: oklch(0.577 0.245 27.325);
@@ -162,5 +190,15 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  /* The custom treatment/time-slot buttons across the site have no focus
+     styling of their own, and Tailwind's base reset strips the browser
+     default outline — keyboard users had no way to see what was focused. */
+  button:focus-visible,
+  a:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid var(--color-brand-teal-deep);
+    outline-offset: 2px;
   }
 }

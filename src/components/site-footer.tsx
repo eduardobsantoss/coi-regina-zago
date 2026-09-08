@@ -15,7 +15,7 @@ export function SiteFooter() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-24 max-w-7xl mx-auto">
         <div>
           <img src={logo} alt="COI · Centro Odontológico Integral" width={1400} height={253} className="h-14 w-auto mb-10" />
-          <p className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-10 max-w-md">
+          <p className="font-heading font-semibold text-3xl md:text-4xl mb-10 max-w-md">
             Cuide do seu sorriso com quem entende.
           </p>
           <Link
@@ -42,7 +42,7 @@ export function SiteFooter() {
         </div>
         <div className="grid grid-cols-2 gap-10">
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy/40">
+            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy-muted">
               Localização
             </h4>
             <p className="text-xs leading-relaxed">
@@ -54,7 +54,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy/40">
+            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy-muted">
               Horários
             </h4>
             <p className="text-xs leading-relaxed">
@@ -66,7 +66,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy/40">
+            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy-muted">
               Contato
             </h4>
             <p className="text-xs leading-relaxed">
@@ -78,7 +78,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy/40">
+            <h4 className="text-[10px] uppercase tracking-[0.2em] mb-5 text-brand-navy-muted">
               Navegação
             </h4>
             <ul className="text-xs leading-relaxed space-y-1">
@@ -90,7 +90,7 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center text-[8px] uppercase tracking-[0.3em] text-brand-navy/30">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center text-[8px] uppercase tracking-[0.3em] text-brand-navy-muted">
         <span>© 2026 Centro Odontológico Integral — Dra. Regina B. Zago — CRO 20.070 | CRO 1277</span>
         <span>Termos · Privacidade · Cookies</span>
       </div>
