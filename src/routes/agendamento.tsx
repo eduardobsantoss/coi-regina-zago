@@ -84,7 +84,7 @@ function Agendamento() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
+    <div className="min-h-screen bg-brand-white text-brand-navy font-sans">
       <SiteHeader />
 
       <section className="pt-40 pb-16 px-6 md:px-10">
@@ -92,7 +92,7 @@ function Agendamento() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Agendamento
           </span>
-          <h1 className="font-serif italic text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
+          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
             Reserve sua primeira consulta.
           </h1>
         </div>
@@ -110,12 +110,12 @@ function Agendamento() {
                 <li
                   key={s.n}
                   className={cn(
-                    "bg-brand-cream p-6 md:p-8 flex items-baseline gap-4",
+                    "bg-brand-white p-6 md:p-8 flex items-baseline gap-4",
                     active && "bg-white",
                     done && "opacity-60",
                   )}
                 >
-                  <span className="font-serif italic text-2xl text-brand-teal-deep">{s.n}</span>
+                  <span className="font-sans font-semibold tracking-tight text-2xl text-brand-teal-deep">{s.n}</span>
                   <span className={cn(
                     "text-[10px] uppercase tracking-[0.2em]",
                     active ? "text-brand-navy" : "text-brand-navy/50",
@@ -130,7 +130,7 @@ function Agendamento() {
           {/* Step 1 */}
           {step === 1 && (
             <div className="space-y-10">
-              <h2 className="font-serif italic text-3xl md:text-4xl">Qual cuidado procura?</h2>
+              <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl">Qual cuidado procura?</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
                 {treatments.map((t) => (
                   <button
@@ -138,8 +138,8 @@ function Agendamento() {
                     type="button"
                     onClick={() => setTreatment(t)}
                     className={cn(
-                      "bg-brand-cream p-6 text-left text-sm transition-colors",
-                      treatment === t ? "bg-brand-navy text-brand-cream" : "hover:bg-brand-mist",
+                      "bg-brand-white p-6 text-left text-sm transition-colors",
+                      treatment === t ? "bg-brand-navy text-brand-white" : "hover:bg-brand-mist",
                     )}
                   >
                     <span className="block text-[10px] uppercase tracking-[0.2em] mb-2 opacity-50">
@@ -156,9 +156,9 @@ function Agendamento() {
           {/* Step 2 */}
           {step === 2 && (
             <div className="space-y-10">
-              <h2 className="font-serif italic text-3xl md:text-4xl">Escolha data e horário.</h2>
+              <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl">Escolha data e horário.</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="border border-brand-navy/10 bg-brand-cream p-4 inline-block">
+                <div className="border border-brand-navy/10 bg-brand-white p-4 inline-block">
                   <Calendar
                     mode="single"
                     selected={date}
@@ -172,7 +172,7 @@ function Agendamento() {
                   <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/60 mb-6">
                     Horários disponíveis
                     {date && (
-                      <span className="block mt-2 text-brand-teal-deep normal-case tracking-normal text-xs font-serif italic">
+                      <span className="block mt-2 text-brand-teal-deep normal-case tracking-normal text-xs font-sans font-semibold tracking-tight">
                         {format(date, "EEEE, d 'de' MMMM", { locale: ptBR })}
                       </span>
                     )}
@@ -185,8 +185,8 @@ function Agendamento() {
                         disabled={!date}
                         onClick={() => setTime(t)}
                         className={cn(
-                          "bg-brand-cream py-4 text-sm font-serif italic transition-colors",
-                          time === t ? "bg-brand-navy text-brand-cream" : "hover:bg-brand-mist",
+                          "bg-brand-white py-4 text-sm font-sans font-semibold tracking-tight transition-colors",
+                          time === t ? "bg-brand-navy text-brand-white" : "hover:bg-brand-mist",
                           !date && "opacity-40 cursor-not-allowed",
                         )}
                       >
@@ -203,7 +203,7 @@ function Agendamento() {
           {/* Step 3 */}
           {step === 3 && (
             <div className="space-y-10">
-              <h2 className="font-serif italic text-3xl md:text-4xl">Seus dados.</h2>
+              <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl">Seus dados.</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
                 <Field label="Nome completo">
@@ -228,17 +228,17 @@ function Agendamento() {
                 <dl className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                   <div>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Tratamento</dt>
-                    <dd className="font-serif italic text-lg">{treatment}</dd>
+                    <dd className="font-sans font-semibold tracking-tight text-lg">{treatment}</dd>
                   </div>
                   <div>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Data</dt>
-                    <dd className="font-serif italic text-lg">
+                    <dd className="font-sans font-semibold tracking-tight text-lg">
                       {date ? format(date, "d 'de' MMMM", { locale: ptBR }) : "—"}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy/40 mb-2">Horário</dt>
-                    <dd className="font-serif italic text-lg">{time || "—"}</dd>
+                    <dd className="font-sans font-semibold tracking-tight text-lg">{time || "—"}</dd>
                   </div>
                 </dl>
               </div>
@@ -258,7 +258,7 @@ function Agendamento() {
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep block mb-8">
                 Solicitação enviada
               </span>
-              <h2 className="font-serif italic text-4xl md:text-5xl mb-8 leading-tight">
+              <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl mb-8 leading-tight">
                 Obrigado, {nome.split(" ")[0] || "paciente"}.
               </h2>
               <p className="text-sm text-brand-navy/65 leading-relaxed mb-12">
@@ -269,7 +269,7 @@ function Agendamento() {
               <button
                 type="button"
                 onClick={reset}
-                className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-cream transition-all duration-500"
+                className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
               >
                 Fazer outra reserva →
               </button>
@@ -326,7 +326,7 @@ function NavButtons({
         className={cn(
           "inline-flex items-center gap-3 px-8 py-5 border rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-500",
           canNext
-            ? "border-brand-navy/15 hover:bg-brand-navy hover:text-brand-cream"
+            ? "border-brand-navy/15 hover:bg-brand-navy hover:text-brand-white"
             : "border-brand-navy/10 opacity-40 cursor-not-allowed",
         )}
       >

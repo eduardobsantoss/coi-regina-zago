@@ -68,7 +68,7 @@ function Contato() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-navy font-sans">
+    <div className="min-h-screen bg-brand-white text-brand-navy font-sans">
       <SiteHeader />
 
       <section className="pt-40 pb-16 px-6 md:px-10">
@@ -76,7 +76,7 @@ function Contato() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Contato
           </span>
-          <h1 className="font-serif italic text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
+          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
             Uma conversa antes de qualquer procedimento.
           </h1>
         </div>
@@ -139,7 +139,7 @@ function Contato() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy/40 mb-6 block">
               Envie sua mensagem
             </span>
-            <h2 className="font-serif italic text-3xl md:text-4xl mb-12">
+            <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-12">
               Responderemos pessoalmente.
             </h2>
 
@@ -248,7 +248,7 @@ function Contato() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-cream transition-all duration-500"
+                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
                 >
                   Enviar mensagem →
                 </button>
