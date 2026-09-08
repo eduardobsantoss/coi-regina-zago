@@ -53,7 +53,7 @@ function Sobre() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             A Prática
           </span>
-          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
+          <h1 className="font-heading font-semibold text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
             Mais de 30 anos cuidando de sorrisos em Uberaba.
           </h1>
         </div>
@@ -114,12 +114,12 @@ function Sobre() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Trajetória
             </span>
-            <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl">Marcos da carreira</h2>
+            <h2 className="font-heading font-semibold text-4xl md:text-5xl">Marcos da carreira</h2>
           </div>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {timeline.map((m) => (
               <li key={m.year} className="bg-brand-white p-10">
-                <div className="font-sans font-semibold tracking-tight text-5xl text-brand-teal-deep mb-6">{m.year}</div>
+                <div className="font-heading font-semibold text-5xl text-brand-teal-deep mb-6">{m.year}</div>
                 <h3 className="font-medium mb-3">{m.title}</h3>
                 <p className="text-xs leading-relaxed text-brand-navy-muted">{m.body}</p>
               </li>
@@ -136,7 +136,7 @@ function Sobre() {
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
                 Credenciais
               </span>
-              <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl">Por que confiar seu sorriso a nós</h2>
+              <h2 className="font-heading font-semibold text-4xl md:text-5xl">Por que confiar seu sorriso a nós</h2>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
@@ -159,7 +159,7 @@ function Sobre() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Resultados
             </span>
-            <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl">Sorrisos reais, pacientes reais</h2>
+            <h2 className="font-heading font-semibold text-4xl md:text-5xl">Sorrisos reais, pacientes reais</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {results.map((src, i) => (

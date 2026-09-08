@@ -92,7 +92,7 @@ function Agendamento() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Agendamento
           </span>
-          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
+          <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
             Reserve sua primeira consulta.
           </h1>
         </div>
@@ -113,7 +113,7 @@ function Agendamento() {
                     active && "bg-white",
                   )}
                 >
-                  <span className="font-sans font-semibold tracking-tight text-2xl text-brand-teal-deep">{s.n}</span>
+                  <span className="font-heading font-semibold text-2xl text-brand-teal-deep">{s.n}</span>
                   <span className={cn(
                     "text-[10px] uppercase tracking-[0.2em]",
                     active ? "text-brand-navy" : "text-brand-navy-muted",
@@ -128,7 +128,7 @@ function Agendamento() {
           {/* Step 1 */}
           {step === 1 && (
             <div className="space-y-10">
-              <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl">Qual cuidado procura?</h2>
+              <h2 className="font-heading font-semibold text-3xl md:text-4xl">Qual cuidado procura?</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
                 {treatments.map((t) => (
                   <button
@@ -160,7 +160,7 @@ function Agendamento() {
           {/* Step 2 */}
           {step === 2 && (
             <div className="space-y-10">
-              <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl">Escolha data e horário.</h2>
+              <h2 className="font-heading font-semibold text-3xl md:text-4xl">Escolha data e horário.</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="border border-brand-navy/10 bg-brand-white p-4 inline-block">
                   <Calendar
@@ -176,7 +176,7 @@ function Agendamento() {
                   <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-6">
                     Horários disponíveis
                     {date && (
-                      <span className="block mt-2 text-brand-teal-deep normal-case tracking-normal text-xs font-sans font-semibold tracking-tight">
+                      <span className="block mt-2 text-brand-teal-deep normal-case tracking-normal text-xs font-heading font-semibold">
                         {format(date, "EEEE, d 'de' MMMM", { locale: ptBR })}
                       </span>
                     )}
@@ -189,7 +189,7 @@ function Agendamento() {
                         disabled={!date}
                         onClick={() => setTime(t)}
                         className={cn(
-                          "bg-brand-white py-4 text-sm font-sans font-semibold tracking-tight transition-colors",
+                          "bg-brand-white py-4 text-sm font-heading font-semibold transition-colors",
                           time === t ? "bg-brand-navy text-brand-white" : "hover:bg-brand-mist",
                           !date && "opacity-40 cursor-not-allowed",
                         )}
@@ -207,7 +207,7 @@ function Agendamento() {
           {/* Step 3 */}
           {step === 3 && (
             <div className="space-y-10">
-              <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl">Seus dados.</h2>
+              <h2 className="font-heading font-semibold text-3xl md:text-4xl">Seus dados.</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
                 <Field label="Nome completo">
@@ -232,17 +232,17 @@ function Agendamento() {
                 <dl className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                   <div>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-2">Tratamento</dt>
-                    <dd className="font-sans font-semibold tracking-tight text-lg">{treatment}</dd>
+                    <dd className="font-heading font-semibold text-lg">{treatment}</dd>
                   </div>
                   <div>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-2">Data</dt>
-                    <dd className="font-sans font-semibold tracking-tight text-lg">
+                    <dd className="font-heading font-semibold text-lg">
                       {date ? format(date, "d 'de' MMMM", { locale: ptBR }) : "—"}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mb-2">Horário</dt>
-                    <dd className="font-sans font-semibold tracking-tight text-lg">{time || "—"}</dd>
+                    <dd className="font-heading font-semibold text-lg">{time || "—"}</dd>
                   </div>
                 </dl>
               </div>
@@ -262,7 +262,7 @@ function Agendamento() {
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep block mb-8">
                 Solicitação enviada
               </span>
-              <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl mb-8 leading-tight">
+              <h2 className="font-heading font-semibold text-4xl md:text-5xl mb-8 leading-tight">
                 Obrigado, {nome.split(" ")[0] || "paciente"}.
               </h2>
               <p className="text-sm text-brand-navy-muted leading-relaxed mb-12">

@@ -39,7 +39,7 @@ export function SiteHeader() {
       <Link
         to="/"
         className={cn(
-          "flex items-center gap-2.5 text-lg md:text-xl font-sans font-semibold tracking-tight",
+          "flex items-center gap-2.5 text-lg md:text-xl font-heading font-semibold",
           overlay && "drop-shadow-[0_1px_12px_rgba(255,255,255,0.9)]",
         )}
       >

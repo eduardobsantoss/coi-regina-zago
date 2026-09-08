@@ -15,7 +15,7 @@ export function SiteFooter() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-24 max-w-7xl mx-auto">
         <div>
           <img src={logo} alt="COI · Centro Odontológico Integral" width={1400} height={253} className="h-14 w-auto mb-10" />
-          <p className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-10 max-w-md">
+          <p className="font-heading font-semibold text-3xl md:text-4xl mb-10 max-w-md">
             Cuide do seu sorriso com quem entende.
           </p>
           <Link

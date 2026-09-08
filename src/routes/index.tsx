@@ -84,7 +84,7 @@ function Index() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-8 block">
             Centro Odontológico Integral — Uberaba, MG
           </span>
-          <h1 className="font-sans font-semibold tracking-tight text-[clamp(3rem,8vw,6rem)] leading-[0.9] mb-8">
+          <h1 className="font-heading font-semibold text-[clamp(3rem,8vw,6rem)] leading-[0.9] mb-8">
             Cuidado odontológico <br />
             com mais de 30 anos de história.
           </h1>
@@ -119,7 +119,7 @@ function Index() {
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
                 01 / Identidade
               </span>
-              <h2 className="font-sans font-semibold tracking-tight text-4xl md:text-5xl leading-tight mb-8">
+              <h2 className="font-heading font-semibold text-4xl md:text-5xl leading-tight mb-8">
                 Além do clínico. <br />
                 Puramente pessoal.
               </h2>
@@ -163,7 +163,7 @@ function Index() {
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
                 02 / Tratamentos
               </span>
-              <h2 className="font-sans font-semibold tracking-tight text-5xl md:text-6xl">Como Podemos Cuidar de Você</h2>
+              <h2 className="font-heading font-semibold text-5xl md:text-6xl">Como Podemos Cuidar de Você</h2>
             </div>
             <Link
               to="/servicos"
@@ -180,10 +180,10 @@ function Index() {
                 key={s.n}
                 className="bg-brand-white p-12 hover:bg-brand-mist transition-colors duration-500 group"
               >
-                <span className="font-sans font-semibold tracking-tight text-brand-teal-deep block mb-12 text-2xl">
+                <span className="font-heading font-semibold text-brand-teal-deep block mb-12 text-2xl">
                   {s.n}
                 </span>
-                <h3 className="font-sans font-semibold tracking-tight text-3xl mb-6">{s.title}</h3>
+                <h3 className="font-heading font-semibold text-3xl mb-6">{s.title}</h3>
                 <p className="text-xs leading-relaxed text-brand-navy-muted mb-12">{s.body}</p>
                 <div className="w-full h-px bg-brand-navy/5" />
                 <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mt-6 block group-hover:text-brand-teal-deep transition-colors">
@@ -203,19 +203,19 @@ function Index() {
           </span>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
-              <div className="font-sans font-semibold tracking-tight text-5xl md:text-6xl mb-3">5.0★</div>
+              <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">5.0★</div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 124 avaliações no Google
               </p>
             </div>
             <div>
-              <div className="font-sans font-semibold tracking-tight text-5xl md:text-6xl mb-3">+4.300</div>
+              <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">+4.300</div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 Pacientes atendidos
               </p>
             </div>
             <div>
-              <div className="font-sans font-semibold tracking-tight text-5xl md:text-6xl mb-3">30+</div>
+              <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">30+</div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 Anos de experiência
               </p>
@@ -231,7 +231,7 @@ function Index() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               Próximo passo
             </span>
-            <h2 className="font-sans font-semibold tracking-tight text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="font-heading font-semibold text-5xl md:text-7xl leading-[0.95]">
               Sua primeira <br /> consulta começa <br /> com escuta.
             </h2>
           </div>

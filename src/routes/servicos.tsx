@@ -95,7 +95,7 @@ function Servicos() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             Tratamentos
           </span>
-          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95]">
+          <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95]">
             Cuidado odontológico<br />completo, em um só lugar.
           </h1>
         </div>
@@ -124,12 +124,12 @@ function Servicos() {
                 className="bg-brand-white p-10 md:p-14 hover:bg-brand-mist transition-colors duration-500 flex flex-col"
               >
                 <div className="flex items-baseline justify-between mb-10">
-                  <span className="font-sans font-semibold tracking-tight text-brand-teal-deep text-3xl">{t.n}</span>
+                  <span className="font-heading font-semibold text-brand-teal-deep text-3xl">{t.n}</span>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                     Tratamento
                   </span>
                 </div>
-                <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
+                <h2 className="font-heading font-semibold text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
                 <p className="text-sm leading-relaxed text-brand-navy-muted mb-8">{t.desc}</p>
                 <ul className="space-y-3 mb-10">
                   {t.bullets.map((b) => (

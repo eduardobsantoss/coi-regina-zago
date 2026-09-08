@@ -41,11 +41,28 @@
      site). This is a standalone color tuned to pass AA on its own, not a
      transparency of brand-navy. */
   --color-brand-navy-muted: #427285;
-  /* "Gontserrat" (the manual's custom letter-tightened Montserrat) isn't a
-     distributable web font, so headings use Montserrat SemiBold with
-     tighter tracking (see the font-sans font-semibold tracking-tight
-     pattern used throughout) to approximate it instead. */
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  /* Gontserrat — the manual's custom letter-tightened Montserrat, used for
+     headings and the logotype. Self-hosted from the client-supplied font
+     files (src/assets/fonts/, @font-face below); Medium/SemiBold only, the
+     two weights actually used on the site. */
+  --font-heading: "Gontserrat", "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Gontserrat";
+  src: url("./assets/fonts/Gontserrat-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gontserrat";
+  src: url("./assets/fonts/Gontserrat-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {

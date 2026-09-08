@@ -76,7 +76,7 @@ function Contato() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Contato
           </span>
-          <h1 className="font-sans font-semibold tracking-tight text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
+          <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
             Uma conversa antes de qualquer procedimento.
           </h1>
         </div>
@@ -139,7 +139,7 @@ function Contato() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
               Envie sua mensagem
             </span>
-            <h2 className="font-sans font-semibold tracking-tight text-3xl md:text-4xl mb-12">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl mb-12">
               Responderemos pessoalmente.
             </h2>
 
