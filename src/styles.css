@@ -201,4 +201,12 @@
     outline: 2px solid var(--color-brand-teal-deep);
     outline-offset: 2px;
   }
+
+  /* Native <button> defaults to an arrow cursor, not a pointer — unlike <a>,
+     it gives no visual sign it's clickable. Disabled buttons already carry
+     an explicit cursor-not-allowed class where needed, so excluding :disabled
+     here doesn't fight those. */
+  button:not(:disabled) {
+    cursor: pointer;
+  }
 }

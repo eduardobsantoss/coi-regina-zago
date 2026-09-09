@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import consultorioEntrada from "@/assets/site/consultorio-entrada.jpg";
-import reginaBio from "@/assets/site/regina-bio.jpg";
+import sobreHero from "@/assets/site/sobre-hero-placeholder.jpg";
+import consultorioWide from "@/assets/site/consultorio-wide-placeholder.jpg";
 import resultado1 from "@/assets/site/resultado-1.jpg";
 import resultado2 from "@/assets/site/resultado-2.jpg";
 import resultado3 from "@/assets/site/resultado-3.jpg";
@@ -48,9 +48,19 @@ function Sobre() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-6 md:px-10">
-        <div className="max-w-6xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
+      <section className="relative h-[70vh] min-h-[480px] flex items-end px-6 md:px-10 pb-16">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={sobreHero}
+            alt="Ambiente do consultório odontológico"
+            width={2400}
+            height={1350}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-white/40" />
+        </div>
+        <div className="relative z-10 max-w-5xl">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             A Prática
           </span>
           <h1 className="font-heading font-semibold text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
@@ -62,12 +72,12 @@ function Sobre() {
       <section className="px-6 md:px-10 pb-24">
         <div className="max-w-6xl mx-auto">
           <img
-            src={consultorioEntrada}
-            alt="Entrada do Centro Odontológico Integral"
-            width={900}
-            height={1200}
+            src={consultorioWide}
+            alt="Ambiente do Centro Odontológico Integral"
+            width={1800}
+            height={700}
             loading="lazy"
-            className="w-full max-w-md mx-auto aspect-[3/4] object-cover"
+            className="w-full aspect-[21/9] object-cover"
           />
         </div>
       </section>
@@ -75,18 +85,15 @@ function Sobre() {
       {/* Bio */}
       <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 flex flex-col">
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               A Profissional
             </span>
-            <img
-              src={reginaBio}
-              alt="Dra. Regina Zago"
-              width={700}
-              height={875}
-              loading="lazy"
-              className="w-full max-w-xs aspect-[4/5] object-cover outline-1 -outline-offset-1 outline-white/10"
-            />
+            <div className="w-full max-w-xs flex-1 min-h-[280px] border border-white/10 bg-white/5 flex items-center justify-center">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-white/40">
+                Foto em breve
+              </span>
+            </div>
           </div>
           <div className="md:col-span-8 space-y-8 text-2xl md:text-3xl leading-tight">
             <p>

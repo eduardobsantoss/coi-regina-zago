@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/site/hero-placeholder.jpg";
 import reginaPortrait from "@/assets/site/regina-portrait.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -72,12 +72,12 @@ function Index() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImg}
-            alt="Detalhe em mármore do ambiente do consultório"
-            width={1920}
-            height={1280}
+            alt="Ambiente do consultório odontológico"
+            width={2400}
+            height={1350}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brand-white/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-white/95 via-brand-white/60 to-brand-white/20" />
         </div>
 
         <div className="relative z-10 max-w-5xl">
@@ -142,8 +142,8 @@ function Index() {
                   <p className="text-sm leading-relaxed text-brand-white/60 mb-6">{p.body}</p>
                   <span
                     className={cn(
-                      "inline-block text-[10px] tracking-widest text-brand-navy uppercase rounded-full px-3 py-1",
-                      i % 2 === 0 ? "bg-brand-salmon" : "bg-brand-teal",
+                      "inline-block text-[10px] tracking-widest uppercase rounded-full px-3 py-1",
+                      i % 2 === 0 ? "bg-brand-salmon text-brand-navy" : "bg-brand-teal-deep text-brand-white",
                     )}
                   >
                     {p.tag}
@@ -238,7 +238,7 @@ function Index() {
           <div className="md:col-span-4 flex flex-col gap-4 md:items-end">
             <Link
               to="/agendamento"
-              className="inline-flex items-center gap-3 px-8 py-5 border border-brand-teal/40 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-teal hover:text-brand-navy hover:border-brand-teal transition-all duration-500"
+              className="inline-flex items-center gap-3 px-8 py-5 border border-brand-teal/40 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-teal-deep hover:text-brand-white hover:border-brand-teal-deep transition-all duration-500"
             >
               Agendar avaliação →
             </Link>
