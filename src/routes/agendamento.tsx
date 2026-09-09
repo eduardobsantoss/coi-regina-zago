@@ -109,7 +109,7 @@ function Agendamento() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 pb-32">
+      <section className="px-6 md:px-10 pt-20 pb-32">
         <div className="max-w-5xl mx-auto">
           {/* Stepper */}
           <ol className="grid grid-cols-3 gap-px bg-brand-navy/10 border border-brand-navy/10 mb-16">
