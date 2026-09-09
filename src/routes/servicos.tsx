@@ -117,21 +117,21 @@ function Servicos() {
       {/* Treatments grid */}
       <section className="px-6 md:px-10 py-24">
         <div className="max-w-7xl mx-auto">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
+            Tratamento
+          </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {treatments.map((t) => (
               <article
                 key={t.title}
                 className="bg-brand-white p-10 md:p-14 hover:bg-brand-mist transition-colors duration-500 flex flex-col"
               >
-                <div className="flex items-baseline justify-between mb-10">
-                  <span className="font-heading font-semibold text-brand-teal-deep text-3xl">{t.n}</span>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
-                    Tratamento
-                  </span>
-                </div>
+                <span className="font-heading font-semibold text-brand-teal-deep text-3xl mb-10 block">
+                  {t.n}
+                </span>
                 <h2 className="font-heading font-semibold text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
                 <p className="text-sm leading-relaxed text-brand-navy-muted mb-8">{t.desc}</p>
-                <ul className="space-y-3 mb-10">
+                <ul className="space-y-3">
                   {t.bullets.map((b) => (
                     <li
                       key={b}
@@ -142,14 +142,17 @@ function Servicos() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/agendamento"
-                  className="mt-auto self-start text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted hover:text-brand-teal-deep transition-colors border-b border-brand-navy/20 pb-1"
-                >
-                  Agendar avaliação →
-                </Link>
               </article>
             ))}
+          </div>
+
+          <div className="flex justify-center pt-16">
+            <Link
+              to="/agendamento"
+              className="inline-flex items-center gap-3 px-10 py-6 rounded-full bg-brand-navy text-brand-white text-xs uppercase tracking-[0.2em] hover:bg-brand-teal-deep transition-all duration-500"
+            >
+              Agendar avaliação →
+            </Link>
           </div>
         </div>
       </section>

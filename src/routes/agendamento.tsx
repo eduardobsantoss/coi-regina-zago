@@ -9,6 +9,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import agendamentoHero from "@/assets/site/agendamento-hero-placeholder.jpg";
 
 export const Route = createFileRoute("/agendamento")({
   head: () => ({
@@ -87,9 +88,19 @@ function Agendamento() {
     <div className="min-h-screen bg-brand-white text-brand-navy font-sans">
       <SiteHeader />
 
-      <section className="pt-40 pb-16 px-6 md:px-10">
-        <div className="max-w-5xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
+      <section className="relative h-[55vh] min-h-[380px] flex items-end px-6 md:px-10 pb-16">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={agendamentoHero}
+            alt="Ambiente do consultório odontológico"
+            width={2400}
+            height={1350}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-white/40" />
+        </div>
+        <div className="relative z-10 max-w-5xl">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             Agendamento
           </span>
           <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
@@ -209,18 +220,41 @@ function Agendamento() {
             <div className="space-y-10">
               <h2 className="font-heading font-semibold text-3xl md:text-4xl">Seus dados.</h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
-                <Field label="Nome completo">
-                  <Input value={nome} onChange={(e) => setNome(e.target.value)} className={fieldClass} />
-                </Field>
-                <Field label="Telefone">
-                  <Input value={telefone} onChange={(e) => setTelefone(e.target.value)} className={fieldClass} placeholder="(34) 90000-0000" />
-                </Field>
-                <Field label="E-mail">
-                  <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={fieldClass} />
-                </Field>
-                <Field label="Observações (opcional)">
-                  <Textarea rows={3} value={obs} onChange={(e) => setObs(e.target.value)} className={cn(fieldClass, "resize-none")} />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
+                  <Field label="Nome completo">
+                    <Input
+                      value={nome}
+                      onChange={(e) => setNome(e.target.value)}
+                      className={fieldClass}
+                      placeholder="Como podemos chamá-lo"
+                    />
+                  </Field>
+                  <Field label="Telefone">
+                    <Input
+                      value={telefone}
+                      onChange={(e) => setTelefone(e.target.value)}
+                      className={fieldClass}
+                      placeholder="(34) 90000-0000"
+                    />
+                  </Field>
+                  <Field label="E-mail">
+                    <Input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className={fieldClass}
+                      placeholder="seu@email.com"
+                    />
+                  </Field>
+                </div>
+                <Field label="Observações (opcional)" className="h-full">
+                  <Textarea
+                    value={obs}
+                    onChange={(e) => setObs(e.target.value)}
+                    className={cn(fieldClass, "resize-none flex-1 min-h-[160px]")}
+                    placeholder="Alguma informação que devemos saber antes da consulta?"
+                  />
                 </Field>
               </div>
 
@@ -290,9 +324,17 @@ function Agendamento() {
 const fieldClass =
   "rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal";
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({
+  label,
+  children,
+  className,
+}: {
+  label: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <label className="block space-y-3">
+    <label className={cn("flex flex-col gap-3", className)}>
       <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">{label}</span>
       {children}
     </label>
