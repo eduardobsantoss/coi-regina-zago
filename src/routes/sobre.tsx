@@ -99,9 +99,9 @@ function Sobre() {
               gerações da mesma família.
             </p>
             <p className="text-brand-white/70">
-              Acredita que cuidar de um sorriso é, antes de tudo, cuidar de uma pessoa inteira: com
-              escuta, paciência e atenção aos detalhes que fazem a diferença entre um tratamento e
-              um cuidado de verdade.
+              Cada atendimento começa com avaliação individual e um plano de tratamento pensado
+              para o paciente — a abordagem que sustenta o Centro Odontológico Integral há mais de
+              três décadas.
             </p>
           </div>
         </div>
