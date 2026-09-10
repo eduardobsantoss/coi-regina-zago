@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/site/hero-placeholder.jpg";
-import reginaPortrait from "@/assets/site/regina-portrait.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { cn } from "@/lib/utils";
@@ -117,20 +116,17 @@ function Index() {
           <div className="md:col-span-5">
             <div className="md:sticky md:top-32">
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
-                01 / Identidade
+                Identidade
               </span>
               <h2 className="font-heading font-semibold text-4xl md:text-5xl leading-tight mb-8">
                 Mais que uma clínica. <br />
                 Uma trajetória de confiança.
               </h2>
-              <img
-                src={reginaPortrait}
-                alt="Dra. Regina Zago no consultório"
-                width={900}
-                height={1200}
-                loading="lazy"
-                className="w-full aspect-[3/4] object-cover outline-1 -outline-offset-1 outline-white/10"
-              />
+              <div className="w-full aspect-[3/4] border border-white/10 bg-white/5 flex items-center justify-center">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-brand-white/40">
+                  Foto em breve
+                </span>
+              </div>
             </div>
           </div>
 
@@ -161,7 +157,7 @@ function Index() {
           <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-20">
             <div>
               <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
-                02 / Tratamentos
+                Tratamentos
               </span>
               <h2 className="font-heading font-semibold text-5xl md:text-6xl">Como Podemos Cuidar de Você</h2>
             </div>
@@ -199,7 +195,7 @@ function Index() {
       <section className="py-40 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-salmon/35">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-10 block">
-            03 / Confiança
+            Confiança
           </span>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
