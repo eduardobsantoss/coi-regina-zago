@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import sobreHero from "@/assets/site/sobre-hero-placeholder.jpg";
-import consultorioWide from "@/assets/site/consultorio-wide-placeholder.jpg";
 import resultado1 from "@/assets/site/resultado-1.jpg";
 import resultado2 from "@/assets/site/resultado-2.jpg";
 import resultado3 from "@/assets/site/resultado-3.jpg";
@@ -66,19 +65,6 @@ function Sobre() {
           <h1 className="font-heading font-semibold text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
             Mais de 30 anos cuidando de sorrisos em Uberaba.
           </h1>
-        </div>
-      </section>
-
-      <section className="px-6 md:px-10 pb-24">
-        <div className="max-w-6xl mx-auto">
-          <img
-            src={consultorioWide}
-            alt="Ambiente do Centro Odontológico Integral"
-            width={1800}
-            height={700}
-            loading="lazy"
-            className="w-full aspect-[21/9] object-cover"
-          />
         </div>
       </section>
 
