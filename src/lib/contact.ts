@@ -6,3 +6,4 @@ export const DOCTORALIA_URL = "https://www.doctoralia.com.br/regina-zago/dentist
 export const ADDRESS_QUERY =
   "Centro Odontológico Integral - Dra Regina Zago, R. Cel. Antônio Rios, 1097, Santa Marta, Uberaba - MG, 38061-150";
 export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS_QUERY)}&output=embed`;
+export const GOOGLE_REVIEWS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS_QUERY)}`;
