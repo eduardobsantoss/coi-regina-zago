@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { DOCTORALIA_URL, GOOGLE_REVIEWS_URL } from "@/lib/contact";
 import sobreHero from "@/assets/site/sobre-hero-placeholder.jpg";
 import resultado1 from "@/assets/site/resultado-1.jpg";
 import resultado2 from "@/assets/site/resultado-2.jpg";
@@ -37,6 +38,11 @@ const credentials = [
   { title: "Avaliação", body: "5.0★ no Google, com base em 124 avaliações de pacientes." },
   { title: "Acolhimento", body: "Reconhecida como empresa amiga da comunidade LGBTQ+ — um espaço acolhedor para todos os pacientes." },
   { title: "Atendimento", body: "Consultas com hora marcada, avaliação individual e plano de tratamento personalizado." },
+];
+
+const platformReviews = [
+  { platform: "Google", rating: "5.0", count: "124 avaliações", url: GOOGLE_REVIEWS_URL },
+  { platform: "Doctoralia", rating: "5.0", count: "248 avaliações", url: DOCTORALIA_URL },
 ];
 
 const results = [resultado1, resultado2, resultado3, resultado4];
@@ -140,6 +146,40 @@ function Sobre() {
                 </h3>
                 <p className="text-base leading-relaxed text-brand-navy">{c.body}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="px-6 md:px-10 py-32 border-t border-brand-navy/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+              Avaliações
+            </span>
+            <h2 className="font-heading font-semibold text-4xl md:text-5xl">O que dizem os pacientes</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
+            {platformReviews.map((r) => (
+              <a
+                key={r.platform}
+                href={r.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-white p-10 md:p-12 hover:bg-brand-mist transition-colors duration-500 flex items-center justify-between gap-6 group"
+              >
+                <div>
+                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-teal-deep mb-4">
+                    {r.platform}
+                  </h3>
+                  <div className="font-heading font-semibold text-4xl mb-2">{r.rating}★</div>
+                  <p className="text-sm text-brand-navy-muted">{r.count}</p>
+                </div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted group-hover:text-brand-teal-deep transition-colors shrink-0">
+                  Ver avaliações →
+                </span>
+              </a>
             ))}
           </div>
         </div>
