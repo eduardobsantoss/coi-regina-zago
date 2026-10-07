@@ -31,12 +31,12 @@ export const Route = createFileRoute("/contato")({
       {
         name: "description",
         content:
-          "Fale com o Centro Odontológico Integral em Uberaba, MG. Endereço, horários e formulário de contato direto.",
+          "Fale com o Centro Odontológico Integral em Uberaba e região. Endereço, horários e formulário de contato direto.",
       },
       { property: "og:title", content: "Contato — Centro Odontológico Integral" },
       {
         property: "og:description",
-        content: "Endereço, horários e formulário de contato em Uberaba, MG.",
+        content: "Endereço, horários e formulário de contato em Uberaba e região.",
       },
     ],
   }),
@@ -73,7 +73,7 @@ function Contato() {
 
       <section className="pt-40 pb-16 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Contato
           </span>
           <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
@@ -82,8 +82,8 @@ function Contato() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 pb-32">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+      <section className="px-6 md:px-10 pt-16 pb-32 bg-brand-mist/70">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           {/* Info column */}
           <div className="md:col-span-5 space-y-12">
             <iframe
@@ -91,14 +91,14 @@ function Contato() {
               src={MAPS_EMBED_URL}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="block w-full aspect-[16/6.2] border border-brand-teal/30"
+              className="block w-full aspect-[16/10] md:aspect-[16/6.2] border border-brand-teal/30"
             />
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
+              <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Endereço
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy/75">
+              <p className="text-sm leading-relaxed text-brand-navy">
                 R. Cel. Antônio Rios, 1097 · Sala 1107-B
                 <br />
                 Santa Marta — Uberaba, MG
@@ -108,10 +108,10 @@ function Contato() {
             </div>
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
+              <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Horários
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy/75">
+              <p className="text-sm leading-relaxed text-brand-navy">
                 Segunda a sexta · 08h às 18h
                 <br />
                 Sábado · sob agendamento
@@ -119,24 +119,23 @@ function Contato() {
             </div>
 
             <div>
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
+              <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Canais
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy/75">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-deep">
+              <div className="text-sm leading-relaxed text-brand-navy">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block py-2 hover:text-brand-teal-deep">
                   {PHONE_DISPLAY} · WhatsApp
                 </a>
-                <br />
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-deep">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="block py-2 hover:text-brand-teal-deep">
                   @drareginazagoo no Instagram
                 </a>
-              </p>
+              </div>
             </div>
           </div>
 
           {/* Form column */}
           <div className="md:col-span-7 md:border-l md:border-brand-navy/10 md:pl-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
               Envie sua mensagem
             </span>
             <h2 className="font-heading font-semibold text-3xl md:text-4xl mb-12">
@@ -151,12 +150,12 @@ function Contato() {
                     name="nome"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">Nome</FormLabel>
+                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Nome</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             placeholder="Como podemos chamá-lo"
-                            className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
+                            className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>
                         <FormMessage />
@@ -168,13 +167,13 @@ function Contato() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">E-mail</FormLabel>
+                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">E-mail</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             type="email"
                             placeholder="seu@email.com"
-                            className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
+                            className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>
                         <FormMessage />
@@ -189,12 +188,12 @@ function Contato() {
                     name="telefone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">Telefone</FormLabel>
+                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Telefone</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             placeholder="(34) 90000-0000"
-                            className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
+                            className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
                           />
                         </FormControl>
                         <FormMessage />
@@ -206,10 +205,10 @@ function Contato() {
                     name="assunto"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">Assunto</FormLabel>
+                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Assunto</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
-                            <SelectTrigger className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus:ring-0 focus:border-brand-teal">
+                            <SelectTrigger className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus:ring-0 focus:border-brand-teal">
                               <SelectValue placeholder="Selecione" />
                             </SelectTrigger>
                           </FormControl>
@@ -232,7 +231,7 @@ function Contato() {
                   name="mensagem"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">Mensagem</FormLabel>
+                      <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Mensagem</FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
@@ -248,7 +247,7 @@ function Contato() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
+                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[11px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
                 >
                   Enviar mensagem →
                 </button>

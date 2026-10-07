@@ -10,13 +10,13 @@ export const Route = createFileRoute("/servicos")({
       {
         name: "description",
         content:
-          "Periodontia, implantes, próteses, odontologia estética e cuidado odontológico completo com a Dra. Regina Zago, em Uberaba, MG.",
+          "Periodontia, implantes, próteses, odontologia estética e cuidado odontológico completo com a Dra. Regina Zago, em Uberaba e região.",
       },
       { property: "og:title", content: "Serviços — Centro Odontológico Integral" },
       {
         property: "og:description",
         content:
-          "Cuidado odontológico completo, com foco em Periodontia, em Uberaba, MG.",
+          "Cuidado odontológico completo, com foco em Periodontia, em Uberaba e região.",
       },
     ],
   }),
@@ -27,7 +27,7 @@ const treatments = [
   {
     n: "I",
     title: "Periodontia",
-    desc: "Tratamento e prevenção das doenças da gengiva — a especialidade da Dra. Regina, com título pela ABO desde 2002.",
+    desc: "Tratamento e prevenção das doenças da gengiva — a especialidade da Dra. Regina, com título pela ABO em 2001.",
     bullets: ["Diagnóstico e manutenção periodontal", "Tratamento de gengivite e periodontite", "Acompanhamento contínuo"],
   },
   {
@@ -80,7 +80,7 @@ function Servicos() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[480px] flex items-end px-6 md:px-10 pb-16">
+      <section className="relative min-h-[70svh] flex items-end px-6 md:px-10 pt-32 pb-12 md:pb-16">
         <div className="absolute inset-0 z-0">
           <img
             src={servicesHero}
@@ -89,10 +89,10 @@ function Servicos() {
             height={900}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brand-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-white/90 via-brand-white/55 to-brand-white/25" />
         </div>
         <div className="relative z-10 max-w-4xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             Tratamentos
           </span>
           <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95]">
@@ -102,29 +102,29 @@ function Servicos() {
       </section>
 
       {/* Intro */}
-      <section className="px-6 md:px-10 py-24 border-b border-brand-navy/10">
+      <section className="px-6 md:px-10 py-16 md:py-24 border-b border-brand-navy/10 bg-brand-mist/70">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep">
             Nossa abordagem
           </span>
-          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed text-brand-navy/80">
-            Como o nome do consultório propõe, cuidamos da sua saúde bucal de forma integral —
-            com diagnóstico, tratamento e acompanhamento no mesmo lugar, com a mesma equipe.
+          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed text-brand-navy">
+            Todas as especialidades em um só lugar, sem a necessidade de te encaminhar para outro
+            profissional.
           </p>
         </div>
       </section>
 
       {/* Treatments grid */}
-      <section className="px-6 md:px-10 py-24">
+      <section className="px-6 md:px-10 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
             Tratamento
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {treatments.map((t) => (
               <article
                 key={t.title}
-                className="bg-brand-white p-10 md:p-14 hover:bg-brand-mist transition-colors duration-500 flex flex-col"
+                className="bg-brand-white p-8 md:p-14 border-t-2 border-brand-teal hover:bg-brand-mist transition-colors duration-500 flex flex-col"
               >
                 <span className="font-heading font-semibold text-brand-teal-deep text-3xl mb-10 block">
                   {t.n}
