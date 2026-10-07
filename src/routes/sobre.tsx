@@ -66,7 +66,7 @@ const credentials = [
   { title: "Registro Profissional", body: "CRO-MG 20.070 | CRO-MG 1277 — Centro Odontológico Integral." },
   {
     title: "Avaliação",
-    body: "5.0★ no Google (124 avaliações) e 5.0★ no Doctoralia (248 avaliações), feitas por pacientes.",
+    body: "5.0★ no Google (124 avaliações) e 5.0★ no Doctoralia (250 avaliações), feitas por pacientes.",
   },
   { title: "Acolhimento", body: "Reconhecida como empresa amiga da comunidade LGBTQ+ — um espaço acolhedor para todos os pacientes." },
   {
@@ -77,7 +77,7 @@ const credentials = [
 
 const platformReviews = [
   { platform: "Google", rating: "5.0", count: "124 avaliações", url: GOOGLE_REVIEWS_URL },
-  { platform: "Doctoralia", rating: "5.0", count: "248 avaliações", url: DOCTORALIA_URL },
+  { platform: "Doctoralia", rating: "5.0", count: "250 avaliações", url: DOCTORALIA_URL },
 ];
 
 const results = [resultado1, resultado2, resultado3, resultado4];
@@ -88,7 +88,7 @@ function Sobre() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[480px] flex items-end px-6 md:px-10 pb-16">
+      <section className="relative min-h-[70svh] flex items-end px-6 md:px-10 pt-32 pb-12 md:pb-16">
         <div className="absolute inset-0 z-0">
           <img
             src={sobreHero}
@@ -97,10 +97,10 @@ function Sobre() {
             height={1350}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brand-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-white/90 via-brand-white/55 to-brand-white/25" />
         </div>
         <div className="relative z-10 max-w-5xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             Sobre
           </span>
           <h1 className="font-heading font-semibold text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] max-w-5xl">
@@ -110,14 +110,14 @@ function Sobre() {
       </section>
 
       {/* Bio */}
-      <section className="px-6 md:px-10 py-32 bg-brand-navy text-brand-white">
+      <section className="px-6 md:px-10 py-20 md:py-32 bg-brand-navy text-brand-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4 flex flex-col">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               A Profissional
             </span>
             <div className="w-full max-w-xs flex-1 min-h-[280px] border border-white/10 bg-white/5 flex items-center justify-center">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-white/40">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-brand-white/40">
                 Foto em breve
               </span>
             </div>
@@ -139,7 +139,7 @@ function Sobre() {
               Odontológico Integral há mais de três décadas.
             </p>
             <div className="pt-8 border-t border-white/15">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-3 block">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal mb-3 block">
                 Publicação
               </span>
               <p className="font-heading font-semibold text-lg md:text-xl leading-snug">
@@ -154,10 +154,10 @@ function Sobre() {
       </section>
 
       {/* Timeline */}
-      <section className="px-6 md:px-10 py-32 bg-brand-mist/70">
+      <section className="px-6 md:px-10 py-20 md:py-32 bg-brand-mist/70">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+          <div className="mb-10 md:mb-16">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Trajetória
             </span>
             <h2 className="font-heading font-semibold text-4xl md:text-5xl">Marcos da carreira</h2>
@@ -167,11 +167,11 @@ function Sobre() {
       </section>
 
       {/* Credentials */}
-      <section className="px-6 md:px-10 py-32 border-t border-brand-navy/10">
+      <section className="px-6 md:px-10 py-20 md:py-32 border-t border-brand-navy/10">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
                 Credenciais
               </span>
               <h2 className="font-heading font-semibold text-4xl md:text-5xl">Por que confiar seu sorriso a nós</h2>
@@ -179,8 +179,8 @@ function Sobre() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {credentials.map((c) => (
-              <article key={c.title} className="bg-brand-white p-10 md:p-12">
-                <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-teal-deep mb-4">
+              <article key={c.title} className="bg-brand-white p-8 md:p-12">
+                <h3 className="text-[11px] uppercase tracking-[0.2em] text-brand-teal-deep mb-4">
                   {c.title}
                 </h3>
                 <p className="text-base leading-relaxed text-brand-navy">{c.body}</p>
@@ -191,10 +191,10 @@ function Sobre() {
       </section>
 
       {/* Reviews */}
-      <section className="px-6 md:px-10 py-32 border-t border-brand-navy/10 bg-brand-salmon/35">
+      <section className="px-6 md:px-10 py-20 md:py-32 border-t border-brand-navy/10 bg-brand-salmon/35">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+          <div className="mb-10 md:mb-16">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Avaliações
             </span>
             <h2 className="font-heading font-semibold text-4xl md:text-5xl">Avaliações dos pacientes</h2>
@@ -207,16 +207,16 @@ function Sobre() {
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-white p-10 md:p-12 hover:bg-brand-mist transition-colors duration-500 flex items-center justify-between gap-6 group"
+                className="bg-brand-white p-8 md:p-12 hover:bg-brand-mist transition-colors duration-500 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 group"
               >
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-brand-teal-deep mb-4">
+                  <h3 className="text-[11px] uppercase tracking-[0.2em] text-brand-teal-deep mb-4">
                     {r.platform}
                   </h3>
                   <div className="font-heading font-semibold text-4xl mb-2">{r.rating}★</div>
                   <p className="text-sm text-brand-navy-muted">{r.count}</p>
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted group-hover:text-brand-teal-deep transition-colors shrink-0">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted group-hover:text-brand-teal-deep transition-colors shrink-0">
                   Ver avaliações →
                 </span>
               </a>
@@ -226,10 +226,10 @@ function Sobre() {
       </section>
 
       {/* Results */}
-      <section className="px-6 md:px-10 py-32 border-t border-brand-navy/10">
+      <section className="px-6 md:px-10 py-20 md:py-32 border-t border-brand-navy/10">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+          <div className="mb-10 md:mb-16">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Resultados
             </span>
             <h2 className="font-heading font-semibold text-4xl md:text-5xl">Sorrisos reais, pacientes reais</h2>

@@ -50,7 +50,7 @@ export function TestimonialsCarousel() {
               <p className="text-base leading-relaxed text-brand-navy mb-8 flex-1">“{t.quote}”</p>
               <div className="pt-6 border-t border-brand-navy/10">
                 <p className="font-heading font-semibold text-sm">{t.name}</p>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mt-1">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted mt-1">
                   {t.date} · {t.treatment}
                 </p>
               </div>
@@ -59,8 +59,8 @@ export function TestimonialsCarousel() {
         ))}
       </CarouselContent>
       <div className="flex justify-center gap-3 mt-8">
-        <CarouselPrevious className="static translate-y-0 rounded-full border-brand-navy/15 hover:bg-brand-navy hover:text-brand-white" />
-        <CarouselNext className="static translate-y-0 rounded-full border-brand-navy/15 hover:bg-brand-navy hover:text-brand-white" />
+        <CarouselPrevious className="static translate-y-0 size-11 rounded-full border-brand-navy/15 hover:bg-brand-navy hover:text-brand-white" />
+        <CarouselNext className="static translate-y-0 size-11 rounded-full border-brand-navy/15 hover:bg-brand-navy hover:text-brand-white" />
       </div>
     </Carousel>
   );

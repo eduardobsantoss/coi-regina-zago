@@ -41,7 +41,7 @@ const philosophy = [
   {
     title: "Perto de Você",
     body: "Mais de 4.300 pacientes atendidos. Avaliações merecidamente realizadas por pacientes com alto grau de satisfação.",
-    tags: ["Google · 5.0★ · 124 avaliações", "Doctoralia · 5.0★ · 248 avaliações"],
+    tags: ["Google · 5.0★ · 124 avaliações", "Doctoralia · 5.0★ · 250 avaliações"],
   },
 ];
 
@@ -71,7 +71,7 @@ function MediaPlaceholder({ label, className }: { label: string; className?: str
         className,
       )}
     >
-      <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted">{label}</span>
+      <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted">{label}</span>
     </div>
   );
 }
@@ -82,7 +82,7 @@ function Index() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative h-screen flex flex-col justify-end px-6 md:px-10 pb-16">
+      <section className="relative min-h-svh flex flex-col justify-end px-6 md:px-10 pt-32 pb-12 md:pb-16">
         <div className="absolute inset-0 z-0">
           <img
             src={heroImg}
@@ -95,7 +95,7 @@ function Index() {
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-8 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-8 block">
             Centro Odontológico Integral — Uberaba e região
           </span>
           <h1 className="font-heading font-semibold text-[clamp(3rem,8vw,6rem)] leading-[0.9] mb-8">
@@ -107,16 +107,16 @@ function Index() {
               A Dra. Regina Zago acompanha pacientes de Uberaba e região há mais de três décadas, unindo
               experiência clínica em Periodontia a um atendimento próximo e humano.
             </p>
-            <div className="mt-2 flex gap-3">
+            <div className="mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Link
                 to="/agendamento"
-                className="px-6 py-4 border border-brand-navy/15 rounded-full bg-brand-white/40 backdrop-blur-sm text-[10px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
+                className="px-6 py-4 text-center border border-brand-navy/15 rounded-full bg-brand-white/60 backdrop-blur-sm text-[11px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
               >
                 Reservar consulta
               </Link>
               <Link
                 to="/servicos"
-                className="px-6 py-4 rounded-full text-[10px] uppercase tracking-[0.2em] hover:text-brand-teal-deep transition-colors"
+                className="px-6 py-4 text-center rounded-full text-[11px] uppercase tracking-[0.2em] hover:text-brand-teal-deep transition-colors"
               >
                 Ver tratamentos →
               </Link>
@@ -126,19 +126,19 @@ function Index() {
       </section>
 
       {/* Philosophy */}
-      <section id="filosofia" className="py-32 px-6 md:px-10 bg-brand-navy text-brand-white">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 max-w-7xl mx-auto">
+      <section id="filosofia" className="py-20 md:py-32 px-6 md:px-10 bg-brand-navy text-brand-white">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 max-w-7xl mx-auto">
           <div className="md:col-span-5">
             <div className="md:sticky md:top-32">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
                 Identidade
               </span>
               <h2 className="font-heading font-semibold text-4xl md:text-5xl leading-tight mb-8">
                 Mais que uma clínica. <br />
                 Uma trajetória de confiança.
               </h2>
-              <div className="w-full aspect-[3/4] border border-white/10 bg-white/5 flex items-center justify-center">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-brand-white/40">
+              <div className="w-full aspect-[4/3] md:aspect-[3/4] border border-white/10 bg-white/5 flex items-center justify-center">
+                <span className="text-[11px] uppercase tracking-[0.3em] text-brand-white/40">
                   Foto em breve
                 </span>
               </div>
@@ -146,7 +146,7 @@ function Index() {
           </div>
 
           <div className="md:col-span-6 md:col-start-7 md:pt-32">
-            <div className="space-y-24">
+            <div className="space-y-14 md:space-y-24">
               {philosophy.map((p, i) => (
                 <div key={p.title} className="border-l border-brand-teal/30 pl-8">
                   <h3 className="text-lg font-medium mb-4">{p.title}</h3>
@@ -156,7 +156,7 @@ function Index() {
                       <span
                         key={tag}
                         className={cn(
-                          "inline-block text-[10px] tracking-widest uppercase rounded-full px-3 py-1",
+                          "inline-block text-[11px] tracking-widest uppercase rounded-full px-3 py-1",
                           (i + j) % 2 === 0
                             ? "bg-brand-salmon text-brand-navy"
                             : "bg-brand-teal-deep text-brand-white",
@@ -174,18 +174,18 @@ function Index() {
       </section>
 
       {/* Services preview */}
-      <section id="servicos" className="py-32 px-6 md:px-10 bg-brand-mist/70">
+      <section id="servicos" className="py-20 md:py-32 px-6 md:px-10 bg-brand-mist/70">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-20">
+          <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-12 md:mb-20">
             <div>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
                 Tratamentos
               </span>
               <h2 className="font-heading font-semibold text-5xl md:text-6xl">Como Podemos Cuidar de Você</h2>
             </div>
             <Link
               to="/servicos"
-              className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted hover:text-brand-teal-deep transition-colors"
+              className="py-3.5 text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted hover:text-brand-teal-deep transition-colors"
             >
               Ver todas as especialidades →
             </Link>
@@ -196,7 +196,7 @@ function Index() {
               <Link
                 to="/servicos"
                 key={s.n}
-                className="bg-brand-white p-12 hover:bg-brand-mist transition-colors duration-500 group"
+                className="bg-brand-white p-8 md:p-12 hover:bg-brand-mist transition-colors duration-500 group"
               >
                 <span className="font-heading font-semibold text-brand-teal-deep block mb-12 text-2xl">
                   {s.n}
@@ -204,7 +204,7 @@ function Index() {
                 <h3 className="font-heading font-semibold text-3xl mb-6">{s.title}</h3>
                 <p className="text-xs leading-relaxed text-brand-navy-muted mb-12">{s.body}</p>
                 <div className="w-full h-px bg-brand-navy/5" />
-                <span className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted mt-6 block group-hover:text-brand-teal-deep transition-colors">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted mt-6 block group-hover:text-brand-teal-deep transition-colors">
                   Explorar →
                 </span>
               </Link>
@@ -214,33 +214,33 @@ function Index() {
       </section>
 
       {/* Social proof */}
-      <section className="py-40 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-salmon/35">
+      <section className="py-24 md:py-40 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-salmon/35">
         <div className="max-w-6xl mx-auto text-center">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-10 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-10 block">
             Confiança
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
             <div>
               <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">5.0★</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 124 avaliações no Google
               </p>
             </div>
             <div>
               <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">5.0★</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
-                248 avaliações no Doctoralia
+              <p className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">
+                250 avaliações no Doctoralia
               </p>
             </div>
             <div>
               <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">+4.300</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 Pacientes atendidos
               </p>
             </div>
             <div>
               <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">30+</div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 Anos de experiência
               </p>
             </div>
@@ -249,10 +249,10 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="depoimentos" className="py-32 px-6 md:px-10">
+      <section id="depoimentos" className="py-20 md:py-32 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+          <div className="mb-10 md:mb-16">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
               Depoimentos
             </span>
             <h2 className="font-heading font-semibold text-4xl md:text-5xl">O que dizem os pacientes</h2>
@@ -266,10 +266,10 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-navy text-brand-white px-6 md:px-10 py-32">
+      <section className="bg-brand-navy text-brand-white px-6 md:px-10 py-20 md:py-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
           <div className="md:col-span-8">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               Próximo passo
             </span>
             <h2 className="font-heading font-semibold text-5xl md:text-6xl leading-[0.98]">
@@ -282,13 +282,13 @@ function Index() {
           <div className="md:col-span-4 flex flex-col gap-4 md:items-end">
             <Link
               to="/agendamento"
-              className="inline-flex items-center gap-3 px-8 py-5 border border-brand-teal/40 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-brand-teal-deep hover:text-brand-white hover:border-brand-teal-deep transition-all duration-500"
+              className="inline-flex items-center gap-3 px-8 py-5 border border-brand-teal/40 rounded-full text-[11px] uppercase tracking-[0.2em] hover:bg-brand-teal-deep hover:text-brand-white hover:border-brand-teal-deep transition-all duration-500"
             >
               Agendar avaliação →
             </Link>
             <Link
               to="/contato"
-              className="text-[10px] uppercase tracking-[0.2em] text-brand-white/60 hover:text-brand-teal px-8"
+              className="py-3.5 text-[11px] uppercase tracking-[0.2em] text-brand-white/60 hover:text-brand-teal px-8"
             >
               Falar com a clínica
             </Link>

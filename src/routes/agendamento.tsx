@@ -28,7 +28,7 @@ function Agendamento() {
     <div className="min-h-screen bg-brand-white text-brand-navy font-sans">
       <SiteHeader />
 
-      <section className="relative h-[55vh] min-h-[380px] flex items-end px-6 md:px-10 pb-16">
+      <section className="relative min-h-[55svh] flex items-end px-6 md:px-10 pt-32 pb-12 md:pb-16">
         <div className="absolute inset-0 z-0">
           <img
             src={agendamentoHero}
@@ -37,10 +37,10 @@ function Agendamento() {
             height={1350}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-brand-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-white/90 via-brand-white/55 to-brand-white/25" />
         </div>
         <div className="relative z-10 max-w-5xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
             Agendamento
           </span>
           <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
