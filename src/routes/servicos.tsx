@@ -10,13 +10,13 @@ export const Route = createFileRoute("/servicos")({
       {
         name: "description",
         content:
-          "Periodontia, implantes, próteses, odontologia estética e cuidado odontológico completo com a Dra. Regina Zago, em Uberaba, MG.",
+          "Periodontia, implantes, próteses, odontologia estética e cuidado odontológico completo com a Dra. Regina Zago, em Uberaba e região.",
       },
       { property: "og:title", content: "Serviços — Centro Odontológico Integral" },
       {
         property: "og:description",
         content:
-          "Cuidado odontológico completo, com foco em Periodontia, em Uberaba, MG.",
+          "Cuidado odontológico completo, com foco em Periodontia, em Uberaba e região.",
       },
     ],
   }),
@@ -27,7 +27,7 @@ const treatments = [
   {
     n: "I",
     title: "Periodontia",
-    desc: "Tratamento e prevenção das doenças da gengiva — a especialidade da Dra. Regina, com título pela ABO desde 2002.",
+    desc: "Tratamento e prevenção das doenças da gengiva — a especialidade da Dra. Regina, com título pela ABO em 2001.",
     bullets: ["Diagnóstico e manutenção periodontal", "Tratamento de gengivite e periodontite", "Acompanhamento contínuo"],
   },
   {
@@ -102,14 +102,14 @@ function Servicos() {
       </section>
 
       {/* Intro */}
-      <section className="px-6 md:px-10 py-24 border-b border-brand-navy/10">
+      <section className="px-6 md:px-10 py-24 border-b border-brand-navy/10 bg-brand-mist/70">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep">
             Nossa abordagem
           </span>
-          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed text-brand-navy/80">
-            Como o nome do consultório propõe, cuidamos da sua saúde bucal de forma integral —
-            com diagnóstico, tratamento e acompanhamento no mesmo lugar, com a mesma equipe.
+          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed text-brand-navy">
+            Todas as especialidades em um só lugar, sem a necessidade de te encaminhar para outro
+            profissional.
           </p>
         </div>
       </section>
@@ -124,7 +124,7 @@ function Servicos() {
             {treatments.map((t) => (
               <article
                 key={t.title}
-                className="bg-brand-white p-10 md:p-14 hover:bg-brand-mist transition-colors duration-500 flex flex-col"
+                className="bg-brand-white p-10 md:p-14 border-t-2 border-brand-teal hover:bg-brand-mist transition-colors duration-500 flex flex-col"
               >
                 <span className="font-heading font-semibold text-brand-teal-deep text-3xl mb-10 block">
                   {t.n}

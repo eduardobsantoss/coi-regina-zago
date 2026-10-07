@@ -4,8 +4,9 @@ import { cn } from "@/lib/utils";
 import logoMark from "@/assets/site/logo-icon.png";
 
 const links = [
+  { to: "/", label: "Home" },
   { to: "/servicos", label: "Serviços" },
-  { to: "/sobre", label: "A Prática" },
+  { to: "/sobre", label: "Sobre" },
   { to: "/agendamento", label: "Agendamento" },
   { to: "/contato", label: "Contato" },
 ] as const;
@@ -53,12 +54,12 @@ export function SiteHeader() {
             to={l.to}
             className="hover:text-brand-teal-deep transition-colors"
             activeProps={{ className: "text-brand-teal-deep" }}
+            activeOptions={{ exact: l.to === "/" }}
           >
             {l.label}
           </Link>
         ))}
       </div>
-      <div className="hidden md:block h-px w-10 bg-brand-navy/20" />
     </nav>
   );
 }

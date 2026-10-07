@@ -31,12 +31,12 @@ export const Route = createFileRoute("/contato")({
       {
         name: "description",
         content:
-          "Fale com o Centro Odontológico Integral em Uberaba, MG. Endereço, horários e formulário de contato direto.",
+          "Fale com o Centro Odontológico Integral em Uberaba e região. Endereço, horários e formulário de contato direto.",
       },
       { property: "og:title", content: "Contato — Centro Odontológico Integral" },
       {
         property: "og:description",
-        content: "Endereço, horários e formulário de contato em Uberaba, MG.",
+        content: "Endereço, horários e formulário de contato em Uberaba e região.",
       },
     ],
   }),
@@ -82,7 +82,7 @@ function Contato() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 pb-32">
+      <section className="px-6 md:px-10 pt-16 pb-32 bg-brand-mist/70">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
           {/* Info column */}
           <div className="md:col-span-5 space-y-12">
@@ -98,7 +98,7 @@ function Contato() {
               <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Endereço
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy/75">
+              <p className="text-sm leading-relaxed text-brand-navy">
                 R. Cel. Antônio Rios, 1097 · Sala 1107-B
                 <br />
                 Santa Marta — Uberaba, MG
@@ -111,7 +111,7 @@ function Contato() {
               <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Horários
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy/75">
+              <p className="text-sm leading-relaxed text-brand-navy">
                 Segunda a sexta · 08h às 18h
                 <br />
                 Sábado · sob agendamento
@@ -122,7 +122,7 @@ function Contato() {
               <h3 className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Canais
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy/75">
+              <p className="text-sm leading-relaxed text-brand-navy">
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-deep">
                   {PHONE_DISPLAY} · WhatsApp
                 </a>

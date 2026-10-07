@@ -2,22 +2,24 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/site/hero-placeholder.jpg";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { TestimonialsCarousel } from "@/components/testimonials-carousel";
+import { withPending } from "@/components/pending";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dra. Regina Zago — Centro Odontológico Integral | Uberaba, MG" },
+      { title: "Dra. Regina Zago — Centro Odontológico Integral | Uberaba e região" },
       {
         name: "description",
         content:
-          "Cuidado odontológico completo em Uberaba, MG. Mais de 30 anos de experiência, especialista em Periodontia, nota 5.0 no Google com mais de 120 avaliações.",
+          "Cuidado odontológico completo em Uberaba e região. Mais de 30 anos de experiência, especialista em Periodontia, nota 5.0 no Google e no Doctoralia.",
       },
       { property: "og:title", content: "Dra. Regina Zago — Centro Odontológico Integral" },
       {
         property: "og:description",
         content:
-          "Cuidado odontológico completo e acolhedor em Uberaba, MG, com mais de 30 anos de experiência.",
+          "Cuidado odontológico completo e acolhedor em Uberaba e região, com mais de 30 anos de experiência.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -28,18 +30,18 @@ export const Route = createFileRoute("/")({
 const philosophy = [
   {
     title: "Cuidado Integral",
-    body: "Como o nome do consultório propõe, tratamos a boca como parte da sua saúde geral — do diagnóstico à manutenção, em um só lugar, sem te mandar de um canto a outro.",
-    tag: "Uma clínica, todo o cuidado",
+    body: "Todas as especialidades em um só lugar, sem a necessidade de te encaminhar para outro profissional.",
+    tags: ["Uma clínica, todo o cuidado"],
   },
   {
-    title: "Três Décadas de Experiência",
-    body: "Formada em Odontologia pela Universidade de Uberaba e especialista em Periodontia pela ABO desde 2002, a Dra. Regina já acompanhou milhares de sorrisos — e trata cada paciente como o primeiro.",
-    tag: "Especialista em Periodontia",
+    title: "Mais de Três Décadas de Experiência",
+    body: "Graduada em Odontologia pela Universidade de Uberaba em XXXX, com formação em ortodontia, periodontia, implantodontia, dentística restauradora e odontologia estética. Além de centenas de cursos e participações contínuas em congressos internacionais.",
+    tags: ["Especialista em Periodontia"],
   },
   {
     title: "Perto de Você",
-    body: "Mais de 4.300 pacientes atendidos e nota 5.0 no Google, construída avaliação após avaliação, por quem já passou pela cadeira.",
-    tag: "5.0★ · 124 avaliações",
+    body: "Mais de 4.300 pacientes atendidos. Avaliações merecidamente realizadas por pacientes com alto grau de satisfação.",
+    tags: ["Google · 5.0★ · 124 avaliações", "Doctoralia · 5.0★ · 248 avaliações"],
   },
 ];
 
@@ -61,6 +63,19 @@ const services = [
   },
 ];
 
+function MediaPlaceholder({ label, className }: { label: string; className?: string }) {
+  return (
+    <div
+      className={cn(
+        "flex items-center justify-center border border-dashed border-brand-navy/30 bg-brand-mist/70 p-6 text-center",
+        className,
+      )}
+    >
+      <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted">{label}</span>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-brand-white text-brand-navy font-sans selection:bg-brand-teal/20">
@@ -81,7 +96,7 @@ function Index() {
 
         <div className="relative z-10 max-w-5xl">
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-navy-muted mb-8 block">
-            Centro Odontológico Integral — Uberaba, MG
+            Centro Odontológico Integral — Uberaba e região
           </span>
           <h1 className="font-heading font-semibold text-[clamp(3rem,8vw,6rem)] leading-[0.9] mb-8">
             Cuidado odontológico <br />
@@ -89,7 +104,7 @@ function Index() {
           </h1>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <p className="max-w-md text-sm leading-relaxed text-brand-navy-muted">
-              A Dra. Regina Zago acompanha pacientes de Uberaba há mais de três décadas, unindo
+              A Dra. Regina Zago acompanha pacientes de Uberaba e região há mais de três décadas, unindo
               experiência clínica em Periodontia a um atendimento próximo e humano.
             </p>
             <div className="mt-2 flex gap-3">
@@ -135,15 +150,22 @@ function Index() {
               {philosophy.map((p, i) => (
                 <div key={p.title} className="border-l border-brand-teal/30 pl-8">
                   <h3 className="text-lg font-medium mb-4">{p.title}</h3>
-                  <p className="text-sm leading-relaxed text-brand-white/60 mb-6">{p.body}</p>
-                  <span
-                    className={cn(
-                      "inline-block text-[10px] tracking-widest uppercase rounded-full px-3 py-1",
-                      i % 2 === 0 ? "bg-brand-salmon text-brand-navy" : "bg-brand-teal-deep text-brand-white",
-                    )}
-                  >
-                    {p.tag}
-                  </span>
+                  <p className="text-sm leading-relaxed text-brand-white/60 mb-6">{withPending(p.body)}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tags.map((tag, j) => (
+                      <span
+                        key={tag}
+                        className={cn(
+                          "inline-block text-[10px] tracking-widest uppercase rounded-full px-3 py-1",
+                          (i + j) % 2 === 0
+                            ? "bg-brand-salmon text-brand-navy"
+                            : "bg-brand-teal-deep text-brand-white",
+                        )}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -152,7 +174,7 @@ function Index() {
       </section>
 
       {/* Services preview */}
-      <section id="servicos" className="py-32 px-6 md:px-10">
+      <section id="servicos" className="py-32 px-6 md:px-10 bg-brand-mist/70">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-20">
             <div>
@@ -193,15 +215,21 @@ function Index() {
 
       {/* Social proof */}
       <section className="py-40 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-salmon/35">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-10 block">
             Confiança
           </span>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
             <div>
               <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">5.0★</div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
                 124 avaliações no Google
+              </p>
+            </div>
+            <div>
+              <div className="font-heading font-semibold text-5xl md:text-6xl mb-3">5.0★</div>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-brand-navy-muted">
+                248 avaliações no Doctoralia
               </p>
             </div>
             <div>
@@ -220,6 +248,23 @@ function Index() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section id="depoimentos" className="py-32 px-6 md:px-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4 block">
+              Depoimentos
+            </span>
+            <h2 className="font-heading font-semibold text-4xl md:text-5xl">O que dizem os pacientes</h2>
+          </div>
+          <TestimonialsCarousel />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            <MediaPlaceholder className="md:col-span-2 aspect-video" label="Depoimento em vídeo — em breve" />
+            <MediaPlaceholder className="aspect-video md:aspect-auto md:min-h-full" label="Print de conversa — em breve" />
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-brand-navy text-brand-white px-6 md:px-10 py-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
@@ -227,9 +272,12 @@ function Index() {
             <span className="text-[10px] uppercase tracking-[0.3em] text-brand-teal mb-6 block">
               Próximo passo
             </span>
-            <h2 className="font-heading font-semibold text-5xl md:text-7xl leading-[0.95]">
-              Sua primeira <br /> consulta começa <br /> com escuta.
+            <h2 className="font-heading font-semibold text-5xl md:text-6xl leading-[0.98]">
+              Sua primeira consulta começa com exame clínico minucioso.
             </h2>
+            <p className="font-heading font-semibold text-2xl text-brand-teal mt-8">
+              Começa com entendimento.
+            </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-4 md:items-end">
             <Link

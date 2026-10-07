@@ -49,7 +49,7 @@ function Agendamento() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 pt-20 pb-32">
+      <section className="px-6 md:px-10 pt-20 pb-32 bg-brand-mist/70">
         <div className="max-w-3xl mx-auto min-h-[520px]">
           <DoctoraliaWidget type="big_with_calendar" />
         </div>
