@@ -22,7 +22,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, MAPS_EMBED_URL } from "@/lib/contact";
+import { Instagram } from "lucide-react";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, MAPS_EMBED_URL, MAPS_URL } from "@/lib/contact";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -98,13 +100,19 @@ function Contato() {
               <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
                 Endereço
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy">
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver localização no Google Maps (abre em nova aba)"
+                className="block py-1 text-sm leading-relaxed text-brand-navy hover:text-brand-teal-deep"
+              >
                 R. Cel. Antônio Rios, 1097 · Sala 1107-B
                 <br />
                 Santa Marta — Uberaba, MG
                 <br />
                 CEP 38061-150
-              </p>
+              </a>
             </div>
 
             <div>
@@ -123,11 +131,13 @@ function Contato() {
                 Canais
               </h3>
               <div className="text-sm leading-relaxed text-brand-navy">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block py-2 hover:text-brand-teal-deep">
-                  {PHONE_DISPLAY} · WhatsApp
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 hover:text-brand-teal-deep">
+                  <WhatsAppIcon size={18} />
+                  {PHONE_DISPLAY}
                 </a>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="block py-2 hover:text-brand-teal-deep">
-                  @drareginazagoo no Instagram
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 hover:text-brand-teal-deep">
+                  <Instagram size={18} strokeWidth={1.75} aria-hidden="true" />
+                  @drareginazagoo
                 </a>
               </div>
             </div>

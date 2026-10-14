@@ -1,18 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MessageCircle, CalendarCheck } from "lucide-react";
-import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, DOCTORALIA_URL } from "@/lib/contact";
+import { Instagram, CalendarCheck } from "lucide-react";
+import { PHONE_DISPLAY, WHATSAPP_URL, INSTAGRAM_URL, DOCTORALIA_URL, MAPS_URL } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import logo from "@/assets/site/logo-lockup.png";
 
 const socials = [
   { label: "Instagram", href: INSTAGRAM_URL, Icon: Instagram },
-  { label: "WhatsApp", href: WHATSAPP_URL, Icon: MessageCircle },
+  { label: "WhatsApp", href: WHATSAPP_URL, Icon: WhatsAppIcon },
   { label: "Doctoralia", href: DOCTORALIA_URL, Icon: CalendarCheck },
 ] as const;
 
 export function SiteFooter() {
   return (
-    <footer className="pt-20 md:pt-32 pb-12 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-salmon text-brand-navy">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 md:gap-24 mb-10 md:mb-16 md:mb-24 max-w-7xl mx-auto">
+    <footer className="pt-20 md:pt-32 pb-28 md:pb-12 px-6 md:px-10 border-t border-brand-navy/10 bg-brand-salmon text-brand-navy">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-10 md:mb-24 max-w-7xl mx-auto">
         <div>
           <img src={logo} alt="COI · Centro Odontológico Integral" width={1400} height={253} className="h-14 w-auto mb-10" />
           <p className="font-heading font-semibold text-3xl md:text-4xl mb-10 max-w-md">
@@ -35,7 +36,7 @@ export function SiteFooter() {
                 aria-label={label}
                 className="size-11 rounded-full border border-brand-navy/15 flex items-center justify-center hover:bg-brand-navy hover:text-brand-white transition-all"
               >
-                <Icon size={16} strokeWidth={1.75} />
+                <Icon size={18} strokeWidth={1.75} />
               </a>
             ))}
           </div>
@@ -45,13 +46,19 @@ export function SiteFooter() {
             <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
               Localização
             </h4>
-            <p className="text-xs leading-relaxed">
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver localização no Google Maps (abre em nova aba)"
+              className="block py-1 text-xs leading-relaxed hover:underline"
+            >
               R. Cel. Antônio Rios, 1097 · Sala 1107-B
               <br />
               Santa Marta — Uberaba, MG
               <br />
               38061-150
-            </p>
+            </a>
           </div>
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
@@ -69,13 +76,16 @@ export function SiteFooter() {
             <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
               Contato
             </h4>
-            <p className="text-xs leading-relaxed">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-block py-3 hover:underline">
-                {PHONE_DISPLAY}
-              </a>
-              <br />
-              WhatsApp
-            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`WhatsApp ${PHONE_DISPLAY} (abre em nova aba)`}
+              className="inline-flex items-center gap-2 py-3.5 text-xs hover:underline"
+            >
+              <WhatsAppIcon size={16} />
+              {PHONE_DISPLAY}
+            </a>
           </div>
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
