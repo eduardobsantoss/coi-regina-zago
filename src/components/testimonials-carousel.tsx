@@ -49,8 +49,8 @@ export function TestimonialsCarousel() {
             <div className="h-full border border-brand-navy/10 bg-brand-white p-8 md:p-10 flex flex-col">
               <p className="text-base leading-relaxed text-brand-navy mb-8 flex-1">“{t.quote}”</p>
               <div className="pt-6 border-t border-brand-navy/10">
-                <p className="font-heading font-semibold text-sm">{t.name}</p>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted mt-1">
+                <p className="font-heading font-semibold text-base">{t.name}</p>
+                <p className="label-caps text-brand-navy-muted mt-1">
                   {t.date} · {t.treatment}
                 </p>
               </div>

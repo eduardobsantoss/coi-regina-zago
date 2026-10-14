@@ -40,10 +40,10 @@ function Agendamento() {
           <div className="absolute inset-0 bg-gradient-to-t from-brand-white/90 via-brand-white/55 to-brand-white/25" />
         </div>
         <div className="relative z-10 max-w-5xl">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
+          <span className="kicker text-brand-navy-muted mb-6 block">
             Agendamento
           </span>
-          <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] max-w-3xl">
+          <h1 className="type-page">
             Reserve sua primeira consulta.
           </h1>
         </div>

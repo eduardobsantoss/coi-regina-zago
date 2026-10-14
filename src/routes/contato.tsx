@@ -73,18 +73,18 @@ function Contato() {
     <div className="min-h-screen bg-brand-white text-brand-navy font-sans">
       <SiteHeader />
 
-      <section className="pt-40 pb-16 px-6 md:px-10">
+      <section className="pt-32 md:pt-40 pb-12 md:pb-16 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
+          <span className="kicker text-brand-teal-deep mb-8 block">
             Contato
           </span>
-          <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95] max-w-4xl">
+          <h1 className="type-page">
             Uma conversa antes de qualquer procedimento.
           </h1>
         </div>
       </section>
 
-      <section className="px-6 md:px-10 pt-16 pb-32 bg-brand-mist/70">
+      <section className="px-6 md:px-10 pt-12 md:pt-16 pb-20 md:pb-32 bg-brand-mist/70">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           {/* Info column */}
           <div className="md:col-span-5 space-y-12">
@@ -97,7 +97,7 @@ function Contato() {
             />
 
             <div>
-              <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
+              <h3 className="kicker text-brand-teal-deep mb-4">
                 Endereço
               </h3>
               <a
@@ -105,7 +105,7 @@ function Contato() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ver localização no Google Maps (abre em nova aba)"
-                className="block py-1 text-sm leading-relaxed text-brand-navy hover:text-brand-teal-deep"
+                className="block py-1 type-body text-brand-navy underline-offset-4 hover:underline"
               >
                 R. Cel. Antônio Rios, 1097 · Sala 1107-B
                 <br />
@@ -116,10 +116,10 @@ function Contato() {
             </div>
 
             <div>
-              <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
+              <h3 className="kicker text-brand-teal-deep mb-4">
                 Horários
               </h3>
-              <p className="text-sm leading-relaxed text-brand-navy">
+              <p className="type-body text-brand-navy">
                 Segunda a sexta · 08h às 18h
                 <br />
                 Sábado · sob agendamento
@@ -127,15 +127,15 @@ function Contato() {
             </div>
 
             <div>
-              <h3 className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-4">
+              <h3 className="kicker text-brand-teal-deep mb-4">
                 Canais
               </h3>
-              <div className="text-sm leading-relaxed text-brand-navy">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 hover:text-brand-teal-deep">
+              <div className="type-body text-brand-navy">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2.5 hover:text-brand-teal-deep">
                   <WhatsAppIcon size={18} />
                   {PHONE_DISPLAY}
                 </a>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2 hover:text-brand-teal-deep">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2.5 hover:text-brand-teal-deep">
                   <Instagram size={18} strokeWidth={1.75} aria-hidden="true" />
                   @drareginazagoo
                 </a>
@@ -145,12 +145,10 @@ function Contato() {
 
           {/* Form column */}
           <div className="md:col-span-7 md:border-l md:border-brand-navy/10 md:pl-16">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
+            <span className="kicker text-brand-navy-muted mb-6 block">
               Envie sua mensagem
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl mb-12">
-              Responderemos pessoalmente.
-            </h2>
+            <h2 className="type-section mb-10 md:mb-12">Responderemos pessoalmente.</h2>
 
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -160,12 +158,12 @@ function Contato() {
                     name="nome"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Nome</FormLabel>
+                        <FormLabel className="label-caps text-xs leading-snug text-brand-navy-muted">Nome</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             placeholder="Como podemos chamá-lo"
-                            className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
+                            className="h-12 rounded-none border-0 border-b border-brand-navy-muted bg-transparent px-0 text-base shadow-none focus-visible:ring-0 focus-visible:border-brand-teal-deep focus-visible:shadow-[0_1px_0_0_var(--color-brand-teal-deep)]"
                           />
                         </FormControl>
                         <FormMessage />
@@ -177,13 +175,13 @@ function Contato() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">E-mail</FormLabel>
+                        <FormLabel className="label-caps text-xs leading-snug text-brand-navy-muted">E-mail</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             type="email"
                             placeholder="seu@email.com"
-                            className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
+                            className="h-12 rounded-none border-0 border-b border-brand-navy-muted bg-transparent px-0 text-base shadow-none focus-visible:ring-0 focus-visible:border-brand-teal-deep focus-visible:shadow-[0_1px_0_0_var(--color-brand-teal-deep)]"
                           />
                         </FormControl>
                         <FormMessage />
@@ -198,12 +196,12 @@ function Contato() {
                     name="telefone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Telefone</FormLabel>
+                        <FormLabel className="label-caps text-xs leading-snug text-brand-navy-muted">Telefone</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             placeholder="(34) 90000-0000"
-                            className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal"
+                            className="h-12 rounded-none border-0 border-b border-brand-navy-muted bg-transparent px-0 text-base shadow-none focus-visible:ring-0 focus-visible:border-brand-teal-deep focus-visible:shadow-[0_1px_0_0_var(--color-brand-teal-deep)]"
                           />
                         </FormControl>
                         <FormMessage />
@@ -215,10 +213,10 @@ function Contato() {
                     name="assunto"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Assunto</FormLabel>
+                        <FormLabel className="label-caps text-xs leading-snug text-brand-navy-muted">Assunto</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
-                            <SelectTrigger className="h-12 md:h-9 rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus:ring-0 focus:border-brand-teal">
+                            <SelectTrigger className="h-12 rounded-none border-0 border-b border-brand-navy-muted bg-transparent px-0 text-base shadow-none focus:ring-0 focus:border-brand-teal-deep focus:shadow-[0_1px_0_0_var(--color-brand-teal-deep)]">
                               <SelectValue placeholder="Selecione" />
                             </SelectTrigger>
                           </FormControl>
@@ -241,13 +239,13 @@ function Contato() {
                   name="mensagem"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">Mensagem</FormLabel>
+                      <FormLabel className="label-caps text-xs leading-snug text-brand-navy-muted">Mensagem</FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
                           rows={5}
                           placeholder="Conte um pouco sobre o que procura"
-                          className="rounded-none border-0 border-b border-brand-navy/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-brand-teal resize-none"
+                          className="rounded-none border-0 border-b border-brand-navy-muted bg-transparent px-0 text-base shadow-none focus-visible:ring-0 focus-visible:border-brand-teal-deep focus-visible:shadow-[0_1px_0_0_var(--color-brand-teal-deep)] resize-none"
                         />
                       </FormControl>
                       <FormMessage />
@@ -255,11 +253,8 @@ function Contato() {
                   )}
                 />
 
-                <button
-                  type="submit"
-                  className="inline-flex items-center gap-3 px-8 py-5 border border-brand-navy/15 rounded-full text-[11px] uppercase tracking-[0.2em] hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
-                >
-                  Enviar mensagem →
+                <button type="submit" className="btn btn-primary w-full sm:w-auto">
+                  Enviar mensagem
                 </button>
               </form>
             </Form>

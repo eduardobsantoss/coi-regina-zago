@@ -25,7 +25,14 @@ export default defineConfig({
     // GitHub Pages serves plain files, so every route is rendered to HTML at
     // build time. The site is entirely static marketing content — no server
     // functions, no per-request data — so a crawl from "/" reaches everything.
-    ...(forPages ? { prerender: { enabled: true, crawlLinks: true } } : {}),
+    ...(forPages
+      ? {
+          prerender: { enabled: true, crawlLinks: true },
+          // GitHub Pages answers any missing path with /404.html. The /404
+          // route renders the same page as the router's notFoundComponent.
+          pages: [{ path: "/404", prerender: { outputPath: "/404.html", crawlLinks: false } }],
+        }
+      : {}),
   },
 
   // Nitro bundles a *server*, which GitHub Pages cannot run, and its static

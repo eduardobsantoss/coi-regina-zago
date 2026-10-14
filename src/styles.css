@@ -49,6 +49,17 @@
   --font-heading: "Gontserrat", "Montserrat", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Montserrat (body text), self-hosted instead of Google Fonts so visitors'
+   IPs aren't sent to a third party. Variable font cut to 400–700 and to
+   Latin + Latin Extended-A, ~60KB. */
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Variable.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Gontserrat";
   src: url("./assets/fonts/Gontserrat-Medium.woff2") format("woff2");
@@ -208,5 +219,119 @@
      here doesn't fight those. */
   button:not(:disabled) {
     cursor: pointer;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/*
+ * Type scale and buttons. Each role is defined once here — pages pick a role
+ * (type-page, type-section…) instead of hand-picking sizes, which is how the
+ * page titles had drifted to five different sizes (80–104px). Sizes are
+ * fluid clamp() values, so no breakpoint variants are needed. Color is left to
+ * utilities, so the same role works on light and navy sections.
+ */
+@layer components {
+  .type-display,
+  .type-page,
+  .type-section,
+  .type-card {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .type-display {
+    font-size: clamp(2.75rem, 1.4rem + 5.6vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+  }
+  .type-page {
+    font-size: clamp(2.5rem, 1.7rem + 3.4vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .type-section {
+    font-size: clamp(2rem, 1.55rem + 1.8vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+  }
+  .type-card {
+    font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+    line-height: 1.2;
+  }
+  .type-lead {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+    line-height: 1.6;
+  }
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Small uppercase labels: section kickers, nav, link-buttons. 12px/500 is
+     the floor for tracked uppercase to stay legible. */
+  .kicker,
+  .label-caps {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3rem;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      border-color 0.3s;
+  }
+  .btn-primary {
+    background-color: var(--color-brand-navy);
+    color: var(--color-brand-white);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-brand-teal-deep);
+  }
+  .btn-secondary {
+    border-color: color-mix(in oklab, var(--color-brand-navy) 35%, transparent);
+    color: var(--color-brand-navy);
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-brand-navy);
+    border-color: var(--color-brand-navy);
+    color: var(--color-brand-white);
+  }
+  /* On navy sections. */
+  .btn-light {
+    background-color: var(--color-brand-white);
+    color: var(--color-brand-navy);
+  }
+  .btn-light:hover {
+    background-color: var(--color-brand-salmon);
+  }
+  .btn-ghost-light {
+    border-color: rgb(255 255 255 / 0.4);
+    color: var(--color-brand-white);
+  }
+  .btn-ghost-light:hover {
+    background-color: var(--color-brand-white);
+    color: var(--color-brand-navy);
   }
 }
