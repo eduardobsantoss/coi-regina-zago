@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as R404RouteImport } from './routes/404'
 import { Route as AgendamentoRouteImport } from './routes/agendamento'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ServicosRouteImport } from './routes/servicos'
@@ -18,6 +19,11 @@ import { Route as SobreRouteImport } from './routes/sobre'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R404Route = R404RouteImport.update({
+  id: '/404',
+  path: '/404',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgendamentoRoute = AgendamentoRouteImport.update({
@@ -43,6 +49,7 @@ const SobreRoute = SobreRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/agendamento': typeof AgendamentoRoute
   '/contato': typeof ContatoRoute
   '/servicos': typeof ServicosRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/agendamento': typeof AgendamentoRoute
   '/contato': typeof ContatoRoute
   '/servicos': typeof ServicosRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/agendamento': typeof AgendamentoRoute
   '/contato': typeof ContatoRoute
   '/servicos': typeof ServicosRoute
@@ -65,14 +74,22 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/agendamento' | '/contato' | '/servicos' | '/sobre'
+  fullPaths: '/' | '/404' | '/agendamento' | '/contato' | '/servicos' | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/agendamento' | '/contato' | '/servicos' | '/sobre'
-  id: '__root__' | '/' | '/agendamento' | '/contato' | '/servicos' | '/sobre'
+  to: '/' | '/404' | '/agendamento' | '/contato' | '/servicos' | '/sobre'
+  id:
+    | '__root__'
+    | '/'
+    | '/404'
+    | '/agendamento'
+    | '/contato'
+    | '/servicos'
+    | '/sobre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R404Route: typeof R404Route
   AgendamentoRoute: typeof AgendamentoRoute
   ContatoRoute: typeof ContatoRoute
   ServicosRoute: typeof ServicosRoute
@@ -86,6 +103,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/404': {
+      id: '/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof R404RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agendamento': {
@@ -121,6 +145,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R404Route: R404Route,
   AgendamentoRoute: AgendamentoRoute,
   ContatoRoute: ContatoRoute,
   ServicosRoute: ServicosRoute,

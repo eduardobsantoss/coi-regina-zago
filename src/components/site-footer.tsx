@@ -21,7 +21,7 @@ export function SiteFooter() {
           </p>
           <Link
             to="/agendamento"
-            className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] px-6 py-4 border border-brand-navy/15 rounded-full hover:bg-brand-navy hover:text-brand-white transition-all duration-500"
+            className="btn btn-primary"
           >
             Reservar consulta
             <span aria-hidden>→</span>
@@ -43,7 +43,7 @@ export function SiteFooter() {
         </div>
         <div className="grid grid-cols-2 gap-10">
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
+            <h4 className="label-caps mb-4 text-brand-navy">
               Localização
             </h4>
             <a
@@ -51,7 +51,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Ver localização no Google Maps (abre em nova aba)"
-              className="block py-1 text-xs leading-relaxed hover:underline"
+              className="block py-1 text-sm leading-relaxed underline-offset-4 hover:underline"
             >
               R. Cel. Antônio Rios, 1097 · Sala 1107-B
               <br />
@@ -61,10 +61,10 @@ export function SiteFooter() {
             </a>
           </div>
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
+            <h4 className="label-caps mb-4 text-brand-navy">
               Horários
             </h4>
-            <p className="text-xs leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Seg — Sex: 08h — 18h
               <br />
               Sáb: Sob agendamento
@@ -73,7 +73,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
+            <h4 className="label-caps mb-4 text-brand-navy">
               Contato
             </h4>
             <a
@@ -81,27 +81,27 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`WhatsApp ${PHONE_DISPLAY} (abre em nova aba)`}
-              className="inline-flex items-center gap-2 py-3.5 text-xs hover:underline"
+              className="inline-flex items-center gap-2 py-3 text-sm underline-offset-4 hover:underline"
             >
               <WhatsAppIcon size={16} />
               {PHONE_DISPLAY}
             </a>
           </div>
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] mb-5 text-brand-navy">
+            <h4 className="label-caps mb-4 text-brand-navy">
               Navegação
             </h4>
-            <ul className="text-xs leading-relaxed">
-              <li><Link to="/" className="inline-block py-3 hover:underline">Home</Link></li>
-              <li><Link to="/servicos" className="inline-block py-3 hover:underline">Serviços</Link></li>
-              <li><Link to="/sobre" className="inline-block py-3 hover:underline">Sobre</Link></li>
-              <li><Link to="/agendamento" className="inline-block py-3 hover:underline">Agendamento</Link></li>
-              <li><Link to="/contato" className="inline-block py-3 hover:underline">Contato</Link></li>
+            <ul className="text-sm leading-relaxed">
+              <li><Link to="/" className="inline-block py-3 underline-offset-4 hover:underline">Home</Link></li>
+              <li><Link to="/servicos" className="inline-block py-3 underline-offset-4 hover:underline">Serviços</Link></li>
+              <li><Link to="/sobre" className="inline-block py-3 underline-offset-4 hover:underline">Sobre</Link></li>
+              <li><Link to="/agendamento" className="inline-block py-3 underline-offset-4 hover:underline">Agendamento</Link></li>
+              <li><Link to="/contato" className="inline-block py-3 underline-offset-4 hover:underline">Contato</Link></li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center text-[10px] uppercase tracking-[0.3em] text-brand-navy">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center label-caps tracking-[0.14em] text-[11px] text-brand-navy">
         <span>© 2026 Centro Odontológico Integral — Dra. Regina B. Zago — CRO-MG 20.070 | CRO-MG 1277</span>
         <span>Termos · Privacidade · Cookies</span>
       </div>

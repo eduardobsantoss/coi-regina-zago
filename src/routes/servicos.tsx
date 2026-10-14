@@ -92,22 +92,16 @@ function Servicos() {
           <div className="absolute inset-0 bg-gradient-to-t from-brand-white/90 via-brand-white/55 to-brand-white/25" />
         </div>
         <div className="relative z-10 max-w-4xl">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-navy-muted mb-6 block">
-            Tratamentos
-          </span>
-          <h1 className="font-heading font-semibold text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.95]">
-            Cuidado odontológico<br />completo, em um só lugar.
-          </h1>
+          <span className="kicker text-brand-navy-muted mb-6 block">Tratamentos</span>
+          <h1 className="type-page">Cuidado odontológico completo, em um só lugar.</h1>
         </div>
       </section>
 
       {/* Intro */}
       <section className="px-6 md:px-10 py-16 md:py-24 border-b border-brand-navy/10 bg-brand-mist/70">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep">
-            Nossa abordagem
-          </span>
-          <p className="md:col-span-2 text-lg md:text-xl leading-relaxed text-brand-navy">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
+          <span className="kicker text-brand-teal-deep md:pt-1.5">Nossa abordagem</span>
+          <p className="md:col-span-2 type-lead text-brand-navy">
             Todas as especialidades em um só lugar, sem a necessidade de te encaminhar para outro
             profissional.
           </p>
@@ -117,27 +111,25 @@ function Servicos() {
       {/* Treatments grid */}
       <section className="px-6 md:px-10 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-brand-teal-deep mb-8 block">
-            Tratamento
-          </span>
+          <span className="kicker text-brand-teal-deep mb-8 block">Tratamentos</span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-navy/10 border border-brand-navy/10">
             {treatments.map((t) => (
               <article
                 key={t.title}
-                className="bg-brand-white p-8 md:p-14 border-t-2 border-brand-teal hover:bg-brand-mist transition-colors duration-500 flex flex-col"
+                className="bg-brand-white p-8 md:p-12 border-t-2 border-brand-teal hover:bg-brand-mist transition-colors duration-500 flex flex-col"
               >
-                <span className="font-heading font-semibold text-brand-teal-deep text-3xl mb-10 block">
+                <span className="font-heading font-semibold text-brand-teal-deep text-2xl mb-8 block">
                   {t.n}
                 </span>
-                <h2 className="font-heading font-semibold text-3xl md:text-4xl mb-5 leading-tight">{t.title}</h2>
-                <p className="text-sm leading-relaxed text-brand-navy-muted mb-8">{t.desc}</p>
+                <h2 className="type-card mb-4">{t.title}</h2>
+                <p className="type-body text-brand-navy-muted mb-8">{t.desc}</p>
                 <ul className="space-y-3">
                   {t.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex gap-3 text-xs text-brand-navy-muted border-t border-brand-navy/5 pt-3"
+                      className="flex items-baseline gap-3 text-sm text-brand-navy border-t border-brand-navy/10 pt-3"
                     >
-                      <span className="text-brand-teal-deep">·</span>
+                      <span aria-hidden="true" className="size-1.5 shrink-0 translate-y-[-2px] rounded-full bg-brand-teal-deep" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -147,11 +139,8 @@ function Servicos() {
           </div>
 
           <div className="flex justify-center pt-16">
-            <Link
-              to="/agendamento"
-              className="inline-flex items-center gap-3 px-10 py-6 rounded-full bg-brand-navy text-brand-white text-xs uppercase tracking-[0.2em] hover:bg-brand-teal-deep transition-all duration-500"
-            >
-              Agendar avaliação →
+            <Link to="/agendamento" className="btn btn-primary px-10">
+              Agendar avaliação
             </Link>
           </div>
         </div>

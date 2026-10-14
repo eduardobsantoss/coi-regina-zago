@@ -63,7 +63,7 @@ export function SiteHeader() {
         COI · Dra. Regina Zago
       </Link>
 
-      <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.2em] text-brand-navy-muted">
+      <div className="hidden md:flex gap-10 label-caps text-brand-navy-muted">
         {links.map((l) => (
           <Link
             key={l.to}
@@ -114,7 +114,7 @@ export function SiteHeader() {
             <SheetClose asChild>
               <Link
                 to="/agendamento"
-                className="rounded-full bg-brand-teal-deep px-8 py-4 text-center text-[11px] uppercase tracking-[0.2em] text-brand-white"
+                className="btn btn-light"
               >
                 Reservar consulta
               </Link>
@@ -123,7 +123,7 @@ export function SiteHeader() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/30 px-8 py-4 text-center text-[11px] uppercase tracking-[0.2em]"
+              className="btn btn-ghost-light"
             >
               Falar no WhatsApp
             </a>

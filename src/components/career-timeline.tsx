@@ -77,8 +77,8 @@ export function CareerTimeline({ entries }: { entries: TimelineEntry[] }) {
               {withPending(entry.when)}
             </div>
             <div>
-              <h3 className="font-heading font-semibold text-lg mb-2">{entry.title}</h3>
-              <p className="text-sm leading-relaxed text-brand-navy">{withPending(entry.body)}</p>
+              <h3 className="font-heading font-semibold text-xl mb-2">{entry.title}</h3>
+              <p className="type-body text-brand-navy">{withPending(entry.body)}</p>
             </div>
           </li>
         );
