@@ -246,7 +246,6 @@ function Index() {
           <div className="md:col-span-8">
             <span className="kicker text-brand-teal mb-6 block">Próximo passo</span>
             <h2 className="type-section">Sua primeira consulta começa com exame clínico minucioso.</h2>
-            <p className="type-card text-brand-teal mt-6">Começa com entendimento.</p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 md:items-end">
             <Link to="/agendamento" className="btn btn-light">
